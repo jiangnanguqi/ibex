@@ -1,1 +1,0 @@
-Please set LOAD to the process of running the executable (e.g. via jtag, or board reset) /home/tang/Projects/jiangnanguqi/ibex/examples/sw/benchmarks/coremark/coremark.elf 0x0 0x0 0x66 10 7 1 2000
