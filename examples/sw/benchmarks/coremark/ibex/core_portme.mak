@@ -4,7 +4,7 @@
 # Licensed under the Apache License, Version 2.0, see LICENSE for details.
 # SPDX-License-Identifier: Apache-2.0
 
-RV_ISA = rv32im
+RV_ISA = rv32ima
 SUPPRESS_PCOUNT_DUMP = 0
 
 OUTFILES = $(OPATH)coremark.dis $(OPATH)coremark.map $(OPATH)coremark.vmem
@@ -55,7 +55,7 @@ ASFLAGS =
 OFLAG 	= -o
 COUT   	= -c
 
-LFLAGS_END = -T $(LINKER_SCRIPT) -Xlinker -Map=$(OPATH)coremark.map -lm -lgcc
+LFLAGS_END = -T $(LINKER_SCRIPT) -Xlinker -Map=$(OPATH)coremark.map -lm -lc -lgcc
 # Flag : PORT_SRCS
 # 	Port specific source files can be added here
 #	You may also need cvt.c if the fcvt functions are not provided as intrinsics by your compiler!
