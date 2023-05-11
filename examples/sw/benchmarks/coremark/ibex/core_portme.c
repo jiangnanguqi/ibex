@@ -4,6 +4,9 @@
 // Licensed under the Apache License, Version 2.0, see LICENSE for details.
 // SPDX-License-Identifier: Apache-2.0
 
+#include <stdio.h>
+#include <stdlib.h>
+
 #include "core_portme.h"
 
 #include "coremark.h"
@@ -168,6 +171,21 @@ void portable_init(core_portable *p, int *argc, char *argv[]) {
   if (sizeof(ee_u32) != 4) {
     ee_printf("ERROR! Please define ee_u32 to a 32b unsigned type!\n");
   }
+
+  #if (MULTITHREAD>1) && (SEED_METHOD==SEED_ARG)
+	int nargs=*argc,i;
+	if ((nargs>1) && (*argv[1]=='M')) {
+		default_num_contexts=parseval(argv[1]+1);
+		if (default_num_contexts>MULTITHREAD)
+			default_num_contexts=MULTITHREAD;
+		/* Shift args since first arg is directed to the portable part and not to coremark main */
+		--nargs;
+		for (i=1; i<nargs; i++)
+			argv[i]=argv[i+1];
+		*argc=nargs;
+	}
+  #endif /* sample of potential platform specific init via command line, reset the number of contexts being used if first argument is M<n>*/
+
   p->portable_id = 1;
 }
 /* Function : portable_fini
@@ -187,3 +205,119 @@ void portable_fini(core_portable *p) {
 
   p->portable_id = 0;
 }
+
+#if (MULTITHREAD>1)
+
+/* Function: core_start_parallel
+	Start benchmarking in a parallel context.
+
+	Three implementations are provided, one using pthreads, one using fork and shared mem, and one using fork and sockets.
+	Other implementations using MCAPI or other standards can easily be devised.
+*/
+/* Function: core_stop_parallel
+	Stop a parallel context execution of coremark, and gather the results.
+
+	Three implementations are provided, one using pthreads, one using fork and shared mem, and one using fork and sockets.
+	Other implementations using MCAPI or other standards can easily be devised.
+*/
+#if USE_PTHREAD
+ee_u8 core_start_parallel(core_results *res) {
+	return (ee_u8)pthread_create(&(res->port.thread),NULL,iterate,(void *)res);
+}
+ee_u8 core_stop_parallel(core_results *res) {
+	void *retval;
+	return (ee_u8)pthread_join(res->port.thread,&retval);
+}
+#elif USE_FORK
+static int key_id=0;
+ee_u8 core_start_parallel(core_results *res) {
+	key_t key=4321+key_id;
+	key_id++;
+	res->port.pid=fork();
+	res->port.shmid=shmget(key, 8, IPC_CREAT | 0666);
+	if (res->port.shmid<0) {
+		ee_printf("ERROR in shmget!\n");
+	}
+	if (res->port.pid==0) {
+		iterate(res);
+		res->port.shm=shmat(res->port.shmid, NULL, 0);
+		/* copy the validation values to the shared memory area  and quit*/
+		if (res->port.shm == (char *) -1) {
+			ee_printf("ERROR in child shmat!\n");
+		} else {
+			memcpy(res->port.shm,&(res->crc),8);
+			shmdt(res->port.shm);
+		}
+		exit(0);
+	}
+	return 1;
+}
+ee_u8 core_stop_parallel(core_results *res) {
+	int status;
+	pid_t wpid = waitpid(res->port.pid,&status,WUNTRACED);
+	if (wpid != res->port.pid) {
+		ee_printf("ERROR waiting for child.\n");
+		if (errno == ECHILD) ee_printf("errno=No such child %d\n",res->port.pid);
+		if (errno == EINTR) ee_printf("errno=Interrupted\n");
+		return 0;
+	}
+	/* after process is done, get the values from the shared memory area */
+	res->port.shm=shmat(res->port.shmid, NULL, 0);
+	if (res->port.shm == (char *) -1) {
+		ee_printf("ERROR in parent shmat!\n");
+		return 0;
+	}
+	memcpy(&(res->crc),res->port.shm,8);
+	shmdt(res->port.shm);
+	return 1;
+}
+#elif USE_SOCKET
+static int key_id=0;
+ee_u8 core_start_parallel(core_results *res) {
+	int bound, buffer_length=8;
+	res->port.sa.sin_family = AF_INET;
+	res->port.sa.sin_addr.s_addr = htonl(0x7F000001);
+	res->port.sa.sin_port = htons(7654+key_id);
+	key_id++;
+	res->port.pid=fork();
+	if (res->port.pid==0) { /* benchmark child */
+		iterate(res);
+		res->port.sock = socket(PF_INET, SOCK_DGRAM, IPPROTO_UDP);
+		if (-1 == res->port.sock) /* if socket failed to initialize, exit */   {
+			ee_printf("Error Creating Socket");
+		} else {
+			int bytes_sent = sendto(res->port.sock, &(res->crc), buffer_length, 0,(struct sockaddr*)&(res->port.sa), sizeof (struct sockaddr_in));
+			if (bytes_sent < 0)
+				ee_printf("Error sending packet: %s\n", strerror(errno));
+			close(res->port.sock); /* close the socket */
+		}
+		exit(0);
+	}
+	/* parent process, open the socket */
+	res->port.sock = socket(PF_INET, SOCK_DGRAM, IPPROTO_UDP);
+	bound = bind(res->port.sock,(struct sockaddr*)&(res->port.sa), sizeof(struct sockaddr));
+	if (bound < 0)
+		ee_printf("bind(): %s\n",strerror(errno));
+	return 1;
+}
+ee_u8 core_stop_parallel(core_results *res) {
+	int status;
+	int fromlen=sizeof(struct sockaddr);
+	int recsize = recvfrom(res->port.sock, &(res->crc), 8, 0, (struct sockaddr*)&(res->port.sa), &fromlen);
+	if (recsize < 0) {
+		ee_printf("Error in receive: %s\n", strerror(errno));
+		return 0;
+	}
+	pid_t wpid = waitpid(res->port.pid,&status,WUNTRACED);
+	if (wpid != res->port.pid) {
+		ee_printf("ERROR waiting for child.\n");
+		if (errno == ECHILD) ee_printf("errno=No such child %d\n",res->port.pid);
+		if (errno == EINTR) ee_printf("errno=Interrupted\n");
+		return 0;
+	}
+	return 1;
+}
+#else /* no standard multicore implementation */
+#error "Please implement multicore functionality in core_portme.c to use multiple contexts."
+#endif /* multithread implementations */
+#endif

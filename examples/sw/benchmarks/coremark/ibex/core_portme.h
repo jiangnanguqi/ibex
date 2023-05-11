@@ -143,8 +143,50 @@ typedef ee_u32 CORE_TICKS;
 */
 #ifndef MULTITHREAD
 #define MULTITHREAD 1
+#endif
+
+/* Configuration: USE_PTHREAD
+	Sample implementation for launching parallel contexts
+	This implementation uses pthread_thread_create and pthread_join.
+
+	Valid values:
+	0 - Do not use pthreads API.
+	1 - Use pthreads API
+
+	Note:
+	This flag only matters if MULTITHREAD has been defined to a value greater then 1.
+*/
+#ifndef USE_PTHREAD
 #define USE_PTHREAD 0
+#endif
+
+/* Configuration: USE_FORK
+	Sample implementation for launching parallel contexts
+	This implementation uses fork, waitpid, shmget,shmat and shmdt.
+
+	Valid values:
+	0 - Do not use fork API.
+	1 - Use fork API
+
+	Note:
+	This flag only matters if MULTITHREAD has been defined to a value greater then 1.
+*/
+#ifndef USE_FORK
 #define USE_FORK 0
+#endif
+
+/* Configuration: USE_SOCKET
+	Sample implementation for launching parallel contexts
+	This implementation uses fork, socket, sendto and recvfrom
+
+	Valid values:
+	0 - Do not use fork and sockets API.
+	1 - Use fork and sockets API
+
+	Note:
+	This flag only matters if MULTITHREAD has been defined to a value greater then 1.
+*/
+#ifndef USE_SOCKET
 #define USE_SOCKET 0
 #endif
 
@@ -179,7 +221,51 @@ typedef ee_u32 CORE_TICKS;
 */
 extern ee_u32 default_num_contexts;
 
-typedef struct CORE_PORTABLE_S { ee_u8 portable_id; } core_portable;
+#if (MULTITHREAD>1)
+#if USE_PTHREAD
+	#include <pthread.h>
+	#define PARALLEL_METHOD "PThreads"
+#elif USE_FORK
+	#include <unistd.h>
+	#include <errno.h>
+	#include <sys/wait.h>
+	#include <sys/shm.h>
+	#include <string.h> /* for memcpy */
+	#define PARALLEL_METHOD "Fork"
+#elif USE_SOCKET
+	#include <sys/types.h>
+	#include <sys/socket.h>
+	#include <netinet/in.h>
+	#include <arpa/inet.h>
+	#include <sys/wait.h>
+	#include <stdio.h>
+	#include <stdlib.h>
+	#include <string.h>
+	#include <unistd.h>
+	#include <errno.h>
+	#define PARALLEL_METHOD "Sockets"
+#else
+	#define PARALLEL_METHOD "Proprietary"
+	#error "Please implement multicore functionality in core_portme.c to use multiple contexts."
+#endif /* Method for multithreading */
+#endif /* MULTITHREAD > 1 */
+
+typedef struct CORE_PORTABLE_S { 
+    #if (MULTITHREAD>1)
+	#if USE_PTHREAD
+	pthread_t thread;
+	#elif USE_FORK
+	pid_t pid;
+	int shmid;
+	void *shm;
+	#elif USE_SOCKET
+	pid_t pid;
+	int sock;
+	struct sockaddr_in sa;
+	#endif /* Method for multithreading */
+    #endif /* MULTITHREAD>1 */
+	ee_u8	portable_id;
+} core_portable;
 
 /* target specific init/fini */
 void portable_init(core_portable *p, int *argc, char *argv[]);

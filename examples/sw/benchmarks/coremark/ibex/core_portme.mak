@@ -22,18 +22,19 @@ OUTFLAG = -o
 # Flag : CC
 #	Use this flag to define compiler to use
 CC = riscv64-unknown-linux-gnu-gcc
-# Flag : LD
-#	Use this flag to define compiler to use
-LD = riscv64-unknown-linux-gnu-ld
-# Flag : AS
-#	Use this flag to define compiler to use
-AS = riscv64-unknown-linux-gnu-as
+# # Flag : LD
+# #	Use this flag to define compiler to use
+# LD = riscv64-unknown-linux-gnu-ld
+# # Flag : AS
+# #	Use this flag to define compiler to use
+# AS = riscv64-unknown-linux-gnu-as
 # Flag : CFLAGS
 #	Use this flag to define compiler options. Note, you can add compiler options from the command line using XCFLAGS="other flags"
 PORT_CFLAGS = -g -march=$(RV_ISA) -mabi=ilp32 -static -mcmodel=medlow -mtune=sifive-3-series \
   -O3 -falign-functions=16 -funroll-all-loops \
 	-finline-functions -falign-jumps=4 \
   -nostdlib -nostartfiles -ffreestanding -mstrict-align \
+  -DMULTITHREAD=4 -DUSE_FORK \
 	-DTOTAL_DATA_SIZE=2000 -DMAIN_HAS_NOARGC=1 \
 	-DPERFORMANCE_RUN=1
 

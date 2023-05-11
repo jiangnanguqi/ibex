@@ -21,9 +21,9 @@
 
 static char *digits = "0123456789abcdefghijklmnopqrstuvwxyz";
 static char *upper_digits = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-static ee_size_t strnlen(const char *s, ee_size_t count);
+ee_size_t strnlen(const char *s, ee_size_t count);
 
-static ee_size_t strnlen(const char *s, ee_size_t count) {
+ee_size_t strnlen(const char *s, ee_size_t count) {
   const char *sc;
   for (sc = s; *sc != '\0' && count--; ++sc)
     ;
