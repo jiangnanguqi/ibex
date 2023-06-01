@@ -1,0 +1,869 @@
+Archive member included to satisfy reference by file (symbol)
+
+/home/tang/riscv/sysroot/usr/lib32/ilp32/libc.a(s_modf.o)
+                              /tmp/ccsRHnen.o (modf)
+/home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(adddf3.o)
+                              /tmp/ccsRHnen.o (__adddf3)
+/home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(divdf3.o)
+                              /tmp/ccEmTrNi.o (__divdf3)
+/home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(eqdf2.o)
+                              /tmp/ccsRHnen.o (__nedf2)
+/home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(gedf2.o)
+                              /tmp/ccEmTrNi.o (__gtdf2)
+/home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(ledf2.o)
+                              /tmp/ccEmTrNi.o (__ltdf2)
+/home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(muldf3.o)
+                              /tmp/ccsRHnen.o (__muldf3)
+/home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(subdf3.o)
+                              /home/tang/riscv/sysroot/usr/lib32/ilp32/libc.a(s_modf.o) (__subdf3)
+/home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(fixdfsi.o)
+                              /tmp/ccsRHnen.o (__fixdfsi)
+/home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(fixunsdfsi.o)
+                              /tmp/ccEmTrNi.o (__fixunsdfsi)
+/home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(floatunsidf.o)
+                              /tmp/ccEmTrNi.o (__floatunsidf)
+/home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(divsf3.o)
+                              /tmp/ccCyfxcC.o (__divsf3)
+/home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(floatunsisf.o)
+                              /tmp/ccCyfxcC.o (__floatunsisf)
+/home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(extendsfdf2.o)
+                              /tmp/ccCyfxcC.o (__extendsfdf2)
+/home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(_clzsi2.o)
+                              /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(adddf3.o) (__clzsi2)
+/home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(_clz.o)
+                              /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(_clzsi2.o) (__clz_tab)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+ram              0x00100000         0x00030000
+stack            0x00130000         0x00008000
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD /tmp/ccADkfVq.o
+LOAD /tmp/ccEmTrNi.o
+LOAD /tmp/cc4GsUWa.o
+LOAD /tmp/cc5jZDGw.o
+LOAD /tmp/ccISSa82.o
+LOAD /tmp/ccCyfxcC.o
+LOAD /tmp/ccSDSCPh.o
+LOAD /tmp/ccsRHnen.o
+LOAD /tmp/ccqjKlf7.o
+LOAD /tmp/ccsZTs0L.o
+LOAD /home/tang/riscv/sysroot/usr/lib32/ilp32/libm.a
+LOAD /home/tang/riscv/sysroot/usr/lib32/ilp32/libc.a
+LOAD /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a
+                0x00002000                        _min_stack = 0x2000
+                0x00008000                        _stack_len = LENGTH (stack)
+                0x00138000                        _stack_start = (ORIGIN (stack) + LENGTH (stack))
+                0x00100080                        _entry_point = (_vectors_start + 0x80)
+                0x00020008                        tohost = 0x20008
+                0x00138010                        fromhost = (_stack_start + 0x10)
+
+.vectors        0x00100000       0x84
+                0x00100000                        . = ALIGN (0x4)
+                0x00100000                        _vectors_start = .
+ *(.vectors)
+ .vectors       0x00100000       0x84 /tmp/ccqjKlf7.o
+                0x00100084                        _vectors_end = .
+
+.text           0x00100090     0xde40
+                0x00100090                        . = ALIGN (0x4)
+ *(.text)
+ .text          0x00100090     0x1420 /tmp/ccADkfVq.o
+                0x00100090                calc_func
+                0x001001b0                cmp_complex
+                0x00100390                cmp_idx
+                0x001003f0                copy_info
+                0x00100410                core_bench_list
+                0x00100c80                core_list_init
+                0x001010b0                core_list_insert_new
+                0x00101110                core_list_remove
+                0x00101140                core_list_undo_remove
+                0x00101160                core_list_find
+                0x001011c0                core_list_reverse
+                0x00101270                core_list_mergesort
+ *fill*         0x001014b0        0x0 
+ .text          0x001014b0       0xa4 /tmp/ccEmTrNi.o
+                0x001014b0                iterate
+ *fill*         0x00101554        0xc 
+ .text          0x00101560     0x2a9c /tmp/cc4GsUWa.o
+                0x00101560                matrix_test
+                0x00102c80                core_bench_matrix
+                0x00102cc0                core_init_matrix
+                0x00103090                matrix_sum
+                0x00103530                matrix_mul_const
+                0x001036e0                matrix_add_const
+                0x00103930                matrix_mul_vect
+                0x00103b50                matrix_mul_matrix
+                0x00103de0                matrix_mul_matrix_bitextract
+ *fill*         0x00103ffc        0x4 
+ .text          0x00104000      0xc4c /tmp/cc5jZDGw.o
+                0x00104000                core_init_state
+                0x00104330                core_state_transition
+                0x00104630                core_bench_state
+ *fill*         0x00104c4c        0x4 
+ .text          0x00104c50      0xbec /tmp/ccISSa82.o
+                0x00104c50                get_seed_32
+                0x00104cc0                crcu8
+                0x00104e00                crcu16
+                0x00105080                crcu32
+                0x001055a0                crc16
+                0x00105830                check_data_types
+ *fill*         0x0010583c        0x4 
+ .text          0x00105840      0x2ec /tmp/ccCyfxcC.o
+                0x00105840                barebones_clock
+                0x00105850                pcount_read
+                0x001058b0                dump_pcounts
+                0x00105940                start_time
+                0x00105980                stop_time
+                0x001059a0                get_time
+                0x001059c0                time_in_secs
+                0x001059f0                portable_init
+                0x00105a30                portable_fini
+ *fill*         0x00105b2c        0x4 
+ .text          0x00105b30     0x38ac /tmp/ccSDSCPh.o
+                0x00106510                ee_printf
+ *fill*         0x001093dc        0x4 
+ .text          0x001093e0      0xd38 /tmp/ccsRHnen.o
+                0x0010a0e0                ecvt
+                0x0010a0f0                ecvtbuf
+                0x0010a100                fcvt
+                0x0010a110                fcvtbuf
+ .text          0x0010a118       0xd0 /tmp/ccqjKlf7.o
+                0x0010a1a4                _start
+ *fill*         0x0010a1e8        0x8 
+ .text          0x0010a1f0      0xcb4 /tmp/ccsZTs0L.o
+                0x0010a1f0                putchar
+                0x0010a200                puts
+                0x0010a280                puthex
+                0x0010a430                sim_halt
+                0x0010a440                pcount_reset
+                0x0010a540                get_mepc
+                0x0010a550                get_mcause
+                0x0010a560                get_mtval
+                0x0010a570                simple_exc_handler
+                0x0010abd0                timer_enable
+                0x0010acb0                timer_disable
+                0x0010acc0                timer_read
+                0x0010ad50                timecmp_update
+                0x0010ad70                get_elapsed_time
+                0x0010ad80                simple_timer_handler
+ .text          0x0010aea4       0xf6 /home/tang/riscv/sysroot/usr/lib32/ilp32/libc.a(s_modf.o)
+                0x0010aea4                modff32x
+                0x0010aea4                modf
+                0x0010aea4                __modf
+                0x0010aea4                modff64
+ .text          0x0010af9a      0x6e8 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(adddf3.o)
+                0x0010af9a                __adddf3
+ .text          0x0010b682      0x5ae /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(divdf3.o)
+                0x0010b682                __divdf3
+ .text          0x0010bc30       0x6c /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(eqdf2.o)
+                0x0010bc30                __eqdf2
+                0x0010bc30                __nedf2
+ .text          0x0010bc9c       0xbe /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(gedf2.o)
+                0x0010bc9c                __gtdf2
+                0x0010bc9c                __gedf2
+ .text          0x0010bd5a       0xbc /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(ledf2.o)
+                0x0010bd5a                __ltdf2
+                0x0010bd5a                __ledf2
+ .text          0x0010be16      0x54a /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(muldf3.o)
+                0x0010be16                __muldf3
+ .text          0x0010c360      0x736 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(subdf3.o)
+                0x0010c360                __subdf3
+ .text          0x0010ca96       0x68 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(fixdfsi.o)
+                0x0010ca96                __fixdfsi
+ .text          0x0010cafe       0x58 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(fixunsdfsi.o)
+                0x0010cafe                __fixunsdfsi
+ .text          0x0010cb56       0x6e /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(floatunsidf.o)
+                0x0010cb56                __floatunsidf
+ .text          0x0010cbc4      0x2e6 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(divsf3.o)
+                0x0010cbc4                __divsf3
+ .text          0x0010ceaa       0xbc /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(floatunsisf.o)
+                0x0010ceaa                __floatunsisf
+ .text          0x0010cf66       0xa6 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(extendsfdf2.o)
+                0x0010cf66                __extendsfdf2
+ .text          0x0010d00c       0x6e /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(_clzsi2.o)
+                0x0010d00c                __clzsi2
+ .text          0x0010d07a        0x0 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(_clz.o)
+ *(.text.*)
+ *fill*         0x0010d07a        0x6 
+ .text.startup  0x0010d080      0xe50 /tmp/ccEmTrNi.o
+                0x0010d080                main
+
+.rodata         0x0010ded0      0xa98
+                0x0010ded0                        . = ALIGN (0x4)
+ *(.srodata)
+ .srodata       0x0010ded0        0x4 /tmp/ccCyfxcC.o
+                0x0010ded0                pcount_num
+ *(.srodata.*)
+ *fill*         0x0010ded4        0x4 
+ .srodata.cst8  0x0010ded8        0x8 /tmp/ccEmTrNi.o
+ .srodata.cst8  0x0010dee0        0x8 /tmp/ccCyfxcC.o
+ .srodata.cst4  0x0010dee8        0x4 /tmp/ccCyfxcC.o
+ *fill*         0x0010deec        0x4 
+ .srodata.cst8  0x0010def0       0x10 /tmp/ccsRHnen.o
+                                 0x18 (size before relaxing)
+ *(.rodata)
+ .rodata        0x0010df00       0x40 /tmp/cc5jZDGw.o
+ .rodata        0x0010df40       0x18 /tmp/ccISSa82.o
+ .rodata        0x0010df58      0x204 /tmp/ccSDSCPh.o
+ .rodata        0x0010e15c       0x40 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(divdf3.o)
+ .rodata        0x0010e19c       0xa8 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(divsf3.o)
+ .rodata        0x0010e244      0x100 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(_clz.o)
+                0x0010e244                __clz_tab
+ *(.rodata.*)
+ .rodata.str1.4
+                0x0010e344      0x3d6 /tmp/ccEmTrNi.o
+                                0x3de (size before relaxing)
+ *fill*         0x0010e71a        0x2 
+ .rodata.str1.4
+                0x0010e71c       0xad /tmp/cc5jZDGw.o
+ *fill*         0x0010e7c9        0x3 
+ .rodata.str1.4
+                0x0010e7cc      0x100 /tmp/ccCyfxcC.o
+                                0x104 (size before relaxing)
+ .rodata.str1.4
+                0x0010e8cc       0x57 /tmp/ccSDSCPh.o
+ *fill*         0x0010e923        0x1 
+ .rodata.str1.4
+                0x0010e924       0x44 /tmp/ccsZTs0L.o
+ .rodata.cst8   0x0010e968        0x8 /home/tang/riscv/sysroot/usr/lib32/ilp32/libc.a(s_modf.o)
+
+.rela.dyn       0x0010e968        0x0
+ .rela.text     0x0010e968        0x0 /tmp/ccADkfVq.o
+ .rela.got      0x0010e968        0x0 /tmp/ccADkfVq.o
+
+.data           0x0010e968       0x44
+                0x0010e968                        . = ALIGN (0x4)
+ *(.sdata)
+ .sdata         0x0010e968        0xc /tmp/ccCyfxcC.o
+                0x0010e968                default_num_contexts
+                0x0010e96c                seed4_volatile
+                0x0010e970                seed3_volatile
+ *(.sdata.*)
+ *(.data)
+ .data          0x0010e974        0x0 /tmp/ccADkfVq.o
+ .data          0x0010e974        0xc /tmp/ccEmTrNi.o
+                0x0010e974                mem_name
+ .data          0x0010e980        0x0 /tmp/cc4GsUWa.o
+ .data          0x0010e980        0x0 /tmp/cc5jZDGw.o
+ .data          0x0010e980        0x0 /tmp/ccISSa82.o
+ .data          0x0010e980       0x2c /tmp/ccCyfxcC.o
+                0x0010e980                pcount_names
+ .data          0x0010e9ac        0x0 /tmp/ccSDSCPh.o
+ .data          0x0010e9ac        0x0 /tmp/ccsRHnen.o
+ .data          0x0010e9ac        0x0 /tmp/ccqjKlf7.o
+ .data          0x0010e9ac        0x0 /tmp/ccsZTs0L.o
+ .data          0x0010e9ac        0x0 /home/tang/riscv/sysroot/usr/lib32/ilp32/libc.a(s_modf.o)
+ .data          0x0010e9ac        0x0 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(adddf3.o)
+ .data          0x0010e9ac        0x0 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(divdf3.o)
+ .data          0x0010e9ac        0x0 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(eqdf2.o)
+ .data          0x0010e9ac        0x0 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(gedf2.o)
+ .data          0x0010e9ac        0x0 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(ledf2.o)
+ .data          0x0010e9ac        0x0 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(muldf3.o)
+ .data          0x0010e9ac        0x0 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(subdf3.o)
+ .data          0x0010e9ac        0x0 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(fixdfsi.o)
+ .data          0x0010e9ac        0x0 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(fixunsdfsi.o)
+ .data          0x0010e9ac        0x0 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(floatunsidf.o)
+ .data          0x0010e9ac        0x0 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(divsf3.o)
+ .data          0x0010e9ac        0x0 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(floatunsisf.o)
+ .data          0x0010e9ac        0x0 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(extendsfdf2.o)
+ .data          0x0010e9ac        0x0 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(_clzsi2.o)
+ .data          0x0010e9ac        0x0 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(_clz.o)
+ *(.data.*)
+
+.got            0x0010e9ac        0x8
+ .got           0x0010e9ac        0x8 /tmp/ccADkfVq.o
+                0x0010e9ac                _GLOBAL_OFFSET_TABLE_
+
+.got.plt        0x0010e9b4        0x8
+ .got.plt       0x0010e9b4        0x8 /tmp/ccADkfVq.o
+
+.bss            0x0010e9c0       0x78
+                0x0010e9c0                        . = ALIGN (0x4)
+                0x0010e9c0                        _bss_start = .
+ *(.sbss)
+ .sbss          0x0010e9c0       0x14 /tmp/ccCyfxcC.o
+                0x0010e9c8                seed5_volatile
+                0x0010e9cc                seed2_volatile
+                0x0010e9d0                seed1_volatile
+ *fill*         0x0010e9d4        0x4 
+ .sbss          0x0010e9d8       0x10 /tmp/ccsZTs0L.o
+                0x0010e9d8                time_increment
+                0x0010e9e0                time_elapsed
+ *(.sbss.*)
+ *(.bss)
+ .bss           0x0010e9e8        0x0 /tmp/ccADkfVq.o
+ .bss           0x0010e9e8        0x0 /tmp/ccEmTrNi.o
+ .bss           0x0010e9e8        0x0 /tmp/cc4GsUWa.o
+ .bss           0x0010e9e8        0x0 /tmp/cc5jZDGw.o
+ .bss           0x0010e9e8        0x0 /tmp/ccISSa82.o
+ .bss           0x0010e9e8        0x0 /tmp/ccCyfxcC.o
+ .bss           0x0010e9e8        0x0 /tmp/ccSDSCPh.o
+ .bss           0x0010e9e8       0x50 /tmp/ccsRHnen.o
+ .bss           0x0010ea38        0x0 /tmp/ccqjKlf7.o
+ .bss           0x0010ea38        0x0 /tmp/ccsZTs0L.o
+ .bss           0x0010ea38        0x0 /home/tang/riscv/sysroot/usr/lib32/ilp32/libc.a(s_modf.o)
+ .bss           0x0010ea38        0x0 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(adddf3.o)
+ .bss           0x0010ea38        0x0 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(divdf3.o)
+ .bss           0x0010ea38        0x0 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(eqdf2.o)
+ .bss           0x0010ea38        0x0 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(gedf2.o)
+ .bss           0x0010ea38        0x0 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(ledf2.o)
+ .bss           0x0010ea38        0x0 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(muldf3.o)
+ .bss           0x0010ea38        0x0 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(subdf3.o)
+ .bss           0x0010ea38        0x0 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(fixdfsi.o)
+ .bss           0x0010ea38        0x0 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(fixunsdfsi.o)
+ .bss           0x0010ea38        0x0 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(floatunsidf.o)
+ .bss           0x0010ea38        0x0 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(divsf3.o)
+ .bss           0x0010ea38        0x0 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(floatunsisf.o)
+ .bss           0x0010ea38        0x0 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(extendsfdf2.o)
+ .bss           0x0010ea38        0x0 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(_clzsi2.o)
+ .bss           0x0010ea38        0x0 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(_clz.o)
+ *(.bss.*)
+ *(COMMON)
+                0x0010ea38                        _bss_end = .
+
+.stack          0x00130000     0x2000
+                0x00130000                        . = ALIGN (0x4)
+                0x00132000                        . = (. + _min_stack)
+ *fill*         0x00130000     0x2000 
+                0x00132000                        . = ALIGN (0x4)
+                0x00132000                        stack = .
+                0x00132000                        _stack = .
+OUTPUT(/home/tang/Projects/jiangnanguqi/ibex/examples/sw/benchmarks/coremark/coremark.elf elf32-littleriscv)
+
+.debug_info     0x00000000     0x8166
+ .debug_info    0x00000000     0x10e1 /tmp/ccADkfVq.o
+ .debug_info    0x000010e1      0xd54 /tmp/ccEmTrNi.o
+ .debug_info    0x00001e35      0xaa0 /tmp/cc4GsUWa.o
+ .debug_info    0x000028d5      0x546 /tmp/cc5jZDGw.o
+ .debug_info    0x00002e1b      0x533 /tmp/ccISSa82.o
+ .debug_info    0x0000334e      0x64e /tmp/ccCyfxcC.o
+ .debug_info    0x0000399c      0xa52 /tmp/ccSDSCPh.o
+ .debug_info    0x000043ee      0x686 /tmp/ccsRHnen.o
+ .debug_info    0x00004a74       0x23 /tmp/ccqjKlf7.o
+ .debug_info    0x00004a97      0x753 /tmp/ccsZTs0L.o
+ .debug_info    0x000051ea      0x269 /home/tang/riscv/sysroot/usr/lib32/ilp32/libc.a(s_modf.o)
+ .debug_info    0x00005453      0x4ea /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(adddf3.o)
+ .debug_info    0x0000593d      0x67a /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(divdf3.o)
+ .debug_info    0x00005fb7      0x22a /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(eqdf2.o)
+ .debug_info    0x000061e1      0x22b /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(gedf2.o)
+ .debug_info    0x0000640c      0x22b /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(ledf2.o)
+ .debug_info    0x00006637      0x6a0 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(muldf3.o)
+ .debug_info    0x00006cd7      0x4ea /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(subdf3.o)
+ .debug_info    0x000071c1      0x1c6 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(fixdfsi.o)
+ .debug_info    0x00007387      0x1ad /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(fixunsdfsi.o)
+ .debug_info    0x00007534      0x260 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(floatunsidf.o)
+ .debug_info    0x00007794      0x360 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(divsf3.o)
+ .debug_info    0x00007af4      0x208 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(floatunsisf.o)
+ .debug_info    0x00007cfc      0x250 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(extendsfdf2.o)
+ .debug_info    0x00007f4c      0x142 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(_clzsi2.o)
+ .debug_info    0x0000808e       0xd8 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(_clz.o)
+
+.debug_abbrev   0x00000000     0x296a
+ .debug_abbrev  0x00000000      0x2dd /tmp/ccADkfVq.o
+ .debug_abbrev  0x000002dd      0x23d /tmp/ccEmTrNi.o
+ .debug_abbrev  0x0000051a      0x235 /tmp/cc4GsUWa.o
+ .debug_abbrev  0x0000074f      0x226 /tmp/cc5jZDGw.o
+ .debug_abbrev  0x00000975      0x1c8 /tmp/ccISSa82.o
+ .debug_abbrev  0x00000b3d      0x2e4 /tmp/ccCyfxcC.o
+ .debug_abbrev  0x00000e21      0x30b /tmp/ccSDSCPh.o
+ .debug_abbrev  0x0000112c      0x12e /tmp/ccsRHnen.o
+ .debug_abbrev  0x0000125a       0x12 /tmp/ccqjKlf7.o
+ .debug_abbrev  0x0000126c      0x268 /tmp/ccsZTs0L.o
+ .debug_abbrev  0x000014d4      0x126 /home/tang/riscv/sysroot/usr/lib32/ilp32/libc.a(s_modf.o)
+ .debug_abbrev  0x000015fa      0x176 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(adddf3.o)
+ .debug_abbrev  0x00001770      0x173 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(divdf3.o)
+ .debug_abbrev  0x000018e3      0x171 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(eqdf2.o)
+ .debug_abbrev  0x00001a54      0x151 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(gedf2.o)
+ .debug_abbrev  0x00001ba5      0x151 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(ledf2.o)
+ .debug_abbrev  0x00001cf6      0x185 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(muldf3.o)
+ .debug_abbrev  0x00001e7b      0x176 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(subdf3.o)
+ .debug_abbrev  0x00001ff1      0x15b /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(fixdfsi.o)
+ .debug_abbrev  0x0000214c      0x162 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(fixunsdfsi.o)
+ .debug_abbrev  0x000022ae      0x171 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(floatunsidf.o)
+ .debug_abbrev  0x0000241f      0x14c /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(divsf3.o)
+ .debug_abbrev  0x0000256b      0x175 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(floatunsisf.o)
+ .debug_abbrev  0x000026e0      0x150 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(extendsfdf2.o)
+ .debug_abbrev  0x00002830       0xca /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(_clzsi2.o)
+ .debug_abbrev  0x000028fa       0x70 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(_clz.o)
+
+.debug_loclists
+                0x00000000    0x13005
+ .debug_loclists
+                0x00000000     0x2648 /tmp/ccADkfVq.o
+ .debug_loclists
+                0x00002648      0x6fb /tmp/ccEmTrNi.o
+ .debug_loclists
+                0x00002d43     0x1a54 /tmp/cc4GsUWa.o
+ .debug_loclists
+                0x00004797      0x896 /tmp/cc5jZDGw.o
+ .debug_loclists
+                0x0000502d     0x1395 /tmp/ccISSa82.o
+ .debug_loclists
+                0x000063c2      0x1d8 /tmp/ccCyfxcC.o
+ .debug_loclists
+                0x0000659a     0x3970 /tmp/ccSDSCPh.o
+ .debug_loclists
+                0x00009f0a      0x9ec /tmp/ccsRHnen.o
+ .debug_loclists
+                0x0000a8f6      0xe65 /tmp/ccsZTs0L.o
+ .debug_loclists
+                0x0000b75b      0x1a7 /home/tang/riscv/sysroot/usr/lib32/ilp32/libc.a(s_modf.o)
+ .debug_loclists
+                0x0000b902     0x18e9 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(adddf3.o)
+ .debug_loclists
+                0x0000d1eb     0x1c04 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(divdf3.o)
+ .debug_loclists
+                0x0000edef       0x9e /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(eqdf2.o)
+ .debug_loclists
+                0x0000ee8d      0x3a0 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(gedf2.o)
+ .debug_loclists
+                0x0000f22d      0x3cf /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(ledf2.o)
+ .debug_loclists
+                0x0000f5fc      0xddd /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(muldf3.o)
+ .debug_loclists
+                0x000103d9     0x1972 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(subdf3.o)
+ .debug_loclists
+                0x00011d4b      0x156 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(fixdfsi.o)
+ .debug_loclists
+                0x00011ea1       0xc6 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(fixunsdfsi.o)
+ .debug_loclists
+                0x00011f67      0x1b7 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(floatunsidf.o)
+ .debug_loclists
+                0x0001211e      0x921 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(divsf3.o)
+ .debug_loclists
+                0x00012a3f      0x23a /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(floatunsisf.o)
+ .debug_loclists
+                0x00012c79      0x289 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(extendsfdf2.o)
+ .debug_loclists
+                0x00012f02      0x103 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(_clzsi2.o)
+
+.debug_aranges  0x00000000      0x348
+ .debug_aranges
+                0x00000000       0x20 /tmp/ccADkfVq.o
+ .debug_aranges
+                0x00000020       0x28 /tmp/ccEmTrNi.o
+ .debug_aranges
+                0x00000048       0x20 /tmp/cc4GsUWa.o
+ .debug_aranges
+                0x00000068       0x20 /tmp/cc5jZDGw.o
+ .debug_aranges
+                0x00000088       0x20 /tmp/ccISSa82.o
+ .debug_aranges
+                0x000000a8       0x20 /tmp/ccCyfxcC.o
+ .debug_aranges
+                0x000000c8       0x20 /tmp/ccSDSCPh.o
+ .debug_aranges
+                0x000000e8       0x20 /tmp/ccsRHnen.o
+ .debug_aranges
+                0x00000108       0x28 /tmp/ccqjKlf7.o
+ .debug_aranges
+                0x00000130       0x20 /tmp/ccsZTs0L.o
+ .debug_aranges
+                0x00000150       0x20 /home/tang/riscv/sysroot/usr/lib32/ilp32/libc.a(s_modf.o)
+ .debug_aranges
+                0x00000170       0x20 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(adddf3.o)
+ .debug_aranges
+                0x00000190       0x20 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(divdf3.o)
+ .debug_aranges
+                0x000001b0       0x20 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(eqdf2.o)
+ .debug_aranges
+                0x000001d0       0x20 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(gedf2.o)
+ .debug_aranges
+                0x000001f0       0x20 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(ledf2.o)
+ .debug_aranges
+                0x00000210       0x20 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(muldf3.o)
+ .debug_aranges
+                0x00000230       0x20 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(subdf3.o)
+ .debug_aranges
+                0x00000250       0x20 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(fixdfsi.o)
+ .debug_aranges
+                0x00000270       0x20 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(fixunsdfsi.o)
+ .debug_aranges
+                0x00000290       0x20 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(floatunsidf.o)
+ .debug_aranges
+                0x000002b0       0x20 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(divsf3.o)
+ .debug_aranges
+                0x000002d0       0x20 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(floatunsisf.o)
+ .debug_aranges
+                0x000002f0       0x20 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(extendsfdf2.o)
+ .debug_aranges
+                0x00000310       0x20 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(_clzsi2.o)
+ .debug_aranges
+                0x00000330       0x18 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(_clz.o)
+
+.debug_rnglists
+                0x00000000     0x2816
+ .debug_rnglists
+                0x00000000      0x31e /tmp/ccADkfVq.o
+ .debug_rnglists
+                0x0000031e       0xd6 /tmp/ccEmTrNi.o
+ .debug_rnglists
+                0x000003f4      0x2c4 /tmp/cc4GsUWa.o
+ .debug_rnglists
+                0x000006b8      0x1c3 /tmp/cc5jZDGw.o
+ .debug_rnglists
+                0x0000087b      0x12d /tmp/ccISSa82.o
+ .debug_rnglists
+                0x000009a8       0x4e /tmp/ccCyfxcC.o
+ .debug_rnglists
+                0x000009f6      0x24c /tmp/ccSDSCPh.o
+ .debug_rnglists
+                0x00000c42       0x1b /tmp/ccqjKlf7.o
+ .debug_rnglists
+                0x00000c5d      0x950 /tmp/ccsZTs0L.o
+ .debug_rnglists
+                0x000015ad       0x44 /home/tang/riscv/sysroot/usr/lib32/ilp32/libc.a(s_modf.o)
+ .debug_rnglists
+                0x000015f1      0x3e8 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(adddf3.o)
+ .debug_rnglists
+                0x000019d9      0x237 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(divdf3.o)
+ .debug_rnglists
+                0x00001c10       0x56 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(eqdf2.o)
+ .debug_rnglists
+                0x00001c66       0x84 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(gedf2.o)
+ .debug_rnglists
+                0x00001cea       0x69 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(ledf2.o)
+ .debug_rnglists
+                0x00001d53      0x2f6 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(muldf3.o)
+ .debug_rnglists
+                0x00002049      0x3f1 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(subdf3.o)
+ .debug_rnglists
+                0x0000243a       0x32 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(fixdfsi.o)
+ .debug_rnglists
+                0x0000246c       0x28 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(fixunsdfsi.o)
+ .debug_rnglists
+                0x00002494       0xc4 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(floatunsidf.o)
+ .debug_rnglists
+                0x00002558      0x160 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(divsf3.o)
+ .debug_rnglists
+                0x000026b8       0xa9 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(floatunsisf.o)
+ .debug_rnglists
+                0x00002761       0x84 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(extendsfdf2.o)
+ .debug_rnglists
+                0x000027e5       0x31 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(_clzsi2.o)
+
+.debug_line     0x00000000    0x21eb6
+ .debug_line    0x00000000     0x33bd /tmp/ccADkfVq.o
+ .debug_line    0x000033bd     0x1900 /tmp/ccEmTrNi.o
+ .debug_line    0x00004cbd     0x6393 /tmp/cc4GsUWa.o
+ .debug_line    0x0000b050     0x1ed5 /tmp/cc5jZDGw.o
+ .debug_line    0x0000cf25     0x2475 /tmp/ccISSa82.o
+ .debug_line    0x0000f39a      0x41a /tmp/ccCyfxcC.o
+ .debug_line    0x0000f7b4     0x76fc /tmp/ccSDSCPh.o
+ .debug_line    0x00016eb0     0x161a /tmp/ccsRHnen.o
+ .debug_line    0x000184ca      0x187 /tmp/ccqjKlf7.o
+ .debug_line    0x00018651     0x2aa6 /tmp/ccsZTs0L.o
+ .debug_line    0x0001b0f7      0x267 /home/tang/riscv/sysroot/usr/lib32/ilp32/libc.a(s_modf.o)
+ .debug_line    0x0001b35e     0x13f2 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(adddf3.o)
+ .debug_line    0x0001c750     0x1039 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(divdf3.o)
+ .debug_line    0x0001d789      0x21d /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(eqdf2.o)
+ .debug_line    0x0001d9a6      0x374 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(gedf2.o)
+ .debug_line    0x0001dd1a      0x362 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(ledf2.o)
+ .debug_line    0x0001e07c      0xfd9 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(muldf3.o)
+ .debug_line    0x0001f055     0x1561 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(subdf3.o)
+ .debug_line    0x000205b6      0x1ba /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(fixdfsi.o)
+ .debug_line    0x00020770      0x178 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(fixunsdfsi.o)
+ .debug_line    0x000208e8      0x34d /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(floatunsidf.o)
+ .debug_line    0x00020c35      0x93f /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(divsf3.o)
+ .debug_line    0x00021574      0x438 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(floatunsisf.o)
+ .debug_line    0x000219ac      0x3c0 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(extendsfdf2.o)
+ .debug_line    0x00021d6c      0x10b /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(_clzsi2.o)
+ .debug_line    0x00021e77       0x3f /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(_clz.o)
+
+.debug_str      0x00000000     0x13be
+ .debug_str     0x00000000      0x40a /tmp/ccADkfVq.o
+                                0x471 (size before relaxing)
+ .debug_str     0x0000040a      0x19c /tmp/ccEmTrNi.o
+                                0x442 (size before relaxing)
+ .debug_str     0x000005a6       0x9d /tmp/cc4GsUWa.o
+                                0x275 (size before relaxing)
+ .debug_str     0x00000643      0x10a /tmp/cc5jZDGw.o
+                                0x2df (size before relaxing)
+ .debug_str     0x0000074d       0x5e /tmp/ccISSa82.o
+                                0x227 (size before relaxing)
+ .debug_str     0x000007ab       0xcf /tmp/ccCyfxcC.o
+                                0x380 (size before relaxing)
+ .debug_str     0x0000087a      0x10f /tmp/ccSDSCPh.o
+                                0x2b8 (size before relaxing)
+ .debug_str     0x00000989       0x43 /tmp/ccsRHnen.o
+                                0x1e2 (size before relaxing)
+ .debug_str     0x000009cc       0x78 /tmp/ccqjKlf7.o
+ .debug_str     0x00000a44      0x112 /tmp/ccsZTs0L.o
+                                0x27e (size before relaxing)
+ .debug_str     0x00000b56      0x193 /home/tang/riscv/sysroot/usr/lib32/ilp32/libc.a(s_modf.o)
+                                0x266 (size before relaxing)
+ .debug_str     0x00000ce9      0x21b /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(adddf3.o)
+                                0x2aa (size before relaxing)
+ .debug_str     0x00000f04      0x1a8 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(divdf3.o)
+                                0x36c (size before relaxing)
+ .debug_str     0x000010ac       0x27 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(eqdf2.o)
+                                0x1bc (size before relaxing)
+ .debug_str     0x000010d3       0x2c /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(gedf2.o)
+                                0x1e0 (size before relaxing)
+ .debug_str     0x000010ff        0x8 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(ledf2.o)
+                                0x1e0 (size before relaxing)
+ .debug_str     0x00001107      0x125 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(muldf3.o)
+                                0x3c4 (size before relaxing)
+ .debug_str     0x0000122c      0x2aa /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(subdf3.o)
+ .debug_str     0x0000122c       0x1b /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(fixdfsi.o)
+                                0x1b7 (size before relaxing)
+ .debug_str     0x00001247      0x1b3 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(fixunsdfsi.o)
+ .debug_str     0x00001247       0x2d /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(floatunsidf.o)
+                                0x24f (size before relaxing)
+ .debug_str     0x00001274       0xe0 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(divsf3.o)
+                                0x2d7 (size before relaxing)
+ .debug_str     0x00001354       0x15 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(floatunsisf.o)
+                                0x230 (size before relaxing)
+ .debug_str     0x00001369        0xd /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(extendsfdf2.o)
+                                0x1e0 (size before relaxing)
+ .debug_str     0x00001376       0x48 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(_clzsi2.o)
+                                0x1ba (size before relaxing)
+ .debug_str     0x000013be      0x19d /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(_clz.o)
+
+.debug_line_str
+                0x00000000      0x859
+ .debug_line_str
+                0x00000000       0xb1 /tmp/ccADkfVq.o
+                                0x10f (size before relaxing)
+ .debug_line_str
+                0x000000b1        0xc /tmp/ccEmTrNi.o
+                                0x100 (size before relaxing)
+ .debug_line_str
+                0x000000bd        0xe /tmp/cc4GsUWa.o
+                                0x106 (size before relaxing)
+ .debug_line_str
+                0x000000cb        0xd /tmp/cc5jZDGw.o
+                                0x103 (size before relaxing)
+ .debug_line_str
+                0x000000d8        0xc /tmp/ccISSa82.o
+                                 0xf5 (size before relaxing)
+ .debug_line_str
+                0x000000e4       0xe8 /tmp/ccCyfxcC.o
+                                0x1e0 (size before relaxing)
+ .debug_line_str
+                0x000001cc       0x69 /tmp/ccSDSCPh.o
+                                0x1d2 (size before relaxing)
+ .debug_line_str
+                0x00000235       0x54 /tmp/ccsRHnen.o
+                                 0xd8 (size before relaxing)
+ .debug_line_str
+                0x00000289        0x7 /tmp/ccqjKlf7.o
+                                 0x6a (size before relaxing)
+ .debug_line_str
+                0x00000290       0x3e /tmp/ccsZTs0L.o
+                                0x15a (size before relaxing)
+ .debug_line_str
+                0x000002ce       0xcc /home/tang/riscv/sysroot/usr/lib32/ilp32/libc.a(s_modf.o)
+                                0x110 (size before relaxing)
+ .debug_line_str
+                0x0000039a       0xf1 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(adddf3.o)
+                                0x16e (size before relaxing)
+ .debug_line_str
+                0x0000048b       0x4d /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(divdf3.o)
+                                0x178 (size before relaxing)
+ .debug_line_str
+                0x000004d8       0x50 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(eqdf2.o)
+                                0x17b (size before relaxing)
+ .debug_line_str
+                0x00000528       0x42 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(gedf2.o)
+                                0x17b (size before relaxing)
+ .debug_line_str
+                0x0000056a       0x42 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(ledf2.o)
+                                0x17b (size before relaxing)
+ .debug_line_str
+                0x000005ac       0x43 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(muldf3.o)
+                                0x178 (size before relaxing)
+ .debug_line_str
+                0x000005ef       0x43 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(subdf3.o)
+                                0x16e (size before relaxing)
+ .debug_line_str
+                0x00000632       0x44 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(fixdfsi.o)
+                                0x17b (size before relaxing)
+ .debug_line_str
+                0x00000676       0x47 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(fixunsdfsi.o)
+                                0x184 (size before relaxing)
+ .debug_line_str
+                0x000006bd       0x48 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(floatunsidf.o)
+                                0x187 (size before relaxing)
+ .debug_line_str
+                0x00000705       0x4c /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(divsf3.o)
+                                0x16e (size before relaxing)
+ .debug_line_str
+                0x00000751       0x48 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(floatunsisf.o)
+                                0x187 (size before relaxing)
+ .debug_line_str
+                0x00000799       0x48 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(extendsfdf2.o)
+                                0x186 (size before relaxing)
+ .debug_line_str
+                0x000007e1       0x78 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(_clzsi2.o)
+                                0x162 (size before relaxing)
+ .debug_line_str
+                0x00000859      0x162 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(_clz.o)
+
+.comment        0x00000000       0x2d
+ .comment       0x00000000       0x1b /tmp/ccADkfVq.o
+                                 0x1c (size before relaxing)
+ .comment       0x0000001b       0x1c /tmp/ccEmTrNi.o
+ .comment       0x0000001b       0x1c /tmp/cc4GsUWa.o
+ .comment       0x0000001b       0x1c /tmp/cc5jZDGw.o
+ .comment       0x0000001b       0x1c /tmp/ccISSa82.o
+ .comment       0x0000001b       0x1c /tmp/ccCyfxcC.o
+ .comment       0x0000001b       0x1c /tmp/ccSDSCPh.o
+ .comment       0x0000001b       0x1c /tmp/ccsRHnen.o
+ .comment       0x0000001b       0x1c /tmp/ccsZTs0L.o
+ .comment       0x0000001b       0x12 /home/tang/riscv/sysroot/usr/lib32/ilp32/libc.a(s_modf.o)
+                                 0x13 (size before relaxing)
+ .comment       0x0000002d       0x1c /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(adddf3.o)
+ .comment       0x0000002d       0x1c /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(divdf3.o)
+ .comment       0x0000002d       0x1c /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(eqdf2.o)
+ .comment       0x0000002d       0x1c /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(gedf2.o)
+ .comment       0x0000002d       0x1c /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(ledf2.o)
+ .comment       0x0000002d       0x1c /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(muldf3.o)
+ .comment       0x0000002d       0x1c /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(subdf3.o)
+ .comment       0x0000002d       0x1c /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(fixdfsi.o)
+ .comment       0x0000002d       0x1c /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(fixunsdfsi.o)
+ .comment       0x0000002d       0x1c /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(floatunsidf.o)
+ .comment       0x0000002d       0x1c /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(divsf3.o)
+ .comment       0x0000002d       0x1c /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(floatunsisf.o)
+ .comment       0x0000002d       0x1c /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(extendsfdf2.o)
+ .comment       0x0000002d       0x1c /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(_clzsi2.o)
+ .comment       0x0000002d       0x1c /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(_clz.o)
+
+.note.GNU-stack
+                0x00000000        0x0
+ .note.GNU-stack
+                0x00000000        0x0 /tmp/ccADkfVq.o
+ .note.GNU-stack
+                0x00000000        0x0 /tmp/ccEmTrNi.o
+ .note.GNU-stack
+                0x00000000        0x0 /tmp/cc4GsUWa.o
+ .note.GNU-stack
+                0x00000000        0x0 /tmp/cc5jZDGw.o
+ .note.GNU-stack
+                0x00000000        0x0 /tmp/ccISSa82.o
+ .note.GNU-stack
+                0x00000000        0x0 /tmp/ccCyfxcC.o
+ .note.GNU-stack
+                0x00000000        0x0 /tmp/ccSDSCPh.o
+ .note.GNU-stack
+                0x00000000        0x0 /tmp/ccsRHnen.o
+ .note.GNU-stack
+                0x00000000        0x0 /tmp/ccsZTs0L.o
+ .note.GNU-stack
+                0x00000000        0x0 /home/tang/riscv/sysroot/usr/lib32/ilp32/libc.a(s_modf.o)
+ .note.GNU-stack
+                0x00000000        0x0 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(adddf3.o)
+ .note.GNU-stack
+                0x00000000        0x0 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(divdf3.o)
+ .note.GNU-stack
+                0x00000000        0x0 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(eqdf2.o)
+ .note.GNU-stack
+                0x00000000        0x0 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(gedf2.o)
+ .note.GNU-stack
+                0x00000000        0x0 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(ledf2.o)
+ .note.GNU-stack
+                0x00000000        0x0 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(muldf3.o)
+ .note.GNU-stack
+                0x00000000        0x0 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(subdf3.o)
+ .note.GNU-stack
+                0x00000000        0x0 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(fixdfsi.o)
+ .note.GNU-stack
+                0x00000000        0x0 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(fixunsdfsi.o)
+ .note.GNU-stack
+                0x00000000        0x0 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(floatunsidf.o)
+ .note.GNU-stack
+                0x00000000        0x0 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(divsf3.o)
+ .note.GNU-stack
+                0x00000000        0x0 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(floatunsisf.o)
+ .note.GNU-stack
+                0x00000000        0x0 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(extendsfdf2.o)
+ .note.GNU-stack
+                0x00000000        0x0 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(_clzsi2.o)
+ .note.GNU-stack
+                0x00000000        0x0 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(_clz.o)
+
+.riscv.attributes
+                0x00000000       0x38
+ .riscv.attributes
+                0x00000000       0x2f /tmp/ccADkfVq.o
+ .riscv.attributes
+                0x0000002f       0x2f /tmp/ccEmTrNi.o
+ .riscv.attributes
+                0x0000005e       0x2f /tmp/cc4GsUWa.o
+ .riscv.attributes
+                0x0000008d       0x2f /tmp/cc5jZDGw.o
+ .riscv.attributes
+                0x000000bc       0x2f /tmp/ccISSa82.o
+ .riscv.attributes
+                0x000000eb       0x33 /tmp/ccCyfxcC.o
+ .riscv.attributes
+                0x0000011e       0x2f /tmp/ccSDSCPh.o
+ .riscv.attributes
+                0x0000014d       0x2f /tmp/ccsRHnen.o
+ .riscv.attributes
+                0x0000017c       0x31 /tmp/ccqjKlf7.o
+ .riscv.attributes
+                0x000001ad       0x33 /tmp/ccsZTs0L.o
+ .riscv.attributes
+                0x000001e0       0x34 /home/tang/riscv/sysroot/usr/lib32/ilp32/libc.a(s_modf.o)
+ .riscv.attributes
+                0x00000214       0x34 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(adddf3.o)
+ .riscv.attributes
+                0x00000248       0x34 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(divdf3.o)
+ .riscv.attributes
+                0x0000027c       0x34 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(eqdf2.o)
+ .riscv.attributes
+                0x000002b0       0x34 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(gedf2.o)
+ .riscv.attributes
+                0x000002e4       0x34 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(ledf2.o)
+ .riscv.attributes
+                0x00000318       0x34 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(muldf3.o)
+ .riscv.attributes
+                0x0000034c       0x34 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(subdf3.o)
+ .riscv.attributes
+                0x00000380       0x34 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(fixdfsi.o)
+ .riscv.attributes
+                0x000003b4       0x34 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(fixunsdfsi.o)
+ .riscv.attributes
+                0x000003e8       0x34 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(floatunsidf.o)
+ .riscv.attributes
+                0x0000041c       0x34 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(divsf3.o)
+ .riscv.attributes
+                0x00000450       0x34 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(floatunsisf.o)
+ .riscv.attributes
+                0x00000484       0x34 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(extendsfdf2.o)
+ .riscv.attributes
+                0x000004b8       0x34 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(_clzsi2.o)
+ .riscv.attributes
+                0x000004ec       0x34 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(_clz.o)
+
+.debug_frame    0x00000000      0xbc0
+ .debug_frame   0x00000000      0x1a0 /tmp/ccADkfVq.o
+ .debug_frame   0x000001a0       0x98 /tmp/ccEmTrNi.o
+ .debug_frame   0x00000238      0x1f0 /tmp/cc4GsUWa.o
+ .debug_frame   0x00000428       0x74 /tmp/cc5jZDGw.o
+ .debug_frame   0x0000049c       0x70 /tmp/ccISSa82.o
+ .debug_frame   0x0000050c      0x114 /tmp/ccCyfxcC.o
+ .debug_frame   0x00000620       0x90 /tmp/ccSDSCPh.o
+ .debug_frame   0x000006b0       0xa0 /tmp/ccsRHnen.o
+ .debug_frame   0x00000750      0x12c /tmp/ccsZTs0L.o
+ .debug_frame   0x0000087c       0x48 /home/tang/riscv/sysroot/usr/lib32/ilp32/libc.a(s_modf.o)
+ .debug_frame   0x000008c4       0x44 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(adddf3.o)
+ .debug_frame   0x00000908       0x54 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(divdf3.o)
+ .debug_frame   0x0000095c       0x20 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(eqdf2.o)
+ .debug_frame   0x0000097c       0x20 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(gedf2.o)
+ .debug_frame   0x0000099c       0x20 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(ledf2.o)
+ .debug_frame   0x000009bc       0x54 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(muldf3.o)
+ .debug_frame   0x00000a10       0x44 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(subdf3.o)
+ .debug_frame   0x00000a54       0x20 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(fixdfsi.o)
+ .debug_frame   0x00000a74       0x20 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(fixunsdfsi.o)
+ .debug_frame   0x00000a94       0x44 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(floatunsidf.o)
+ .debug_frame   0x00000ad8       0x4c /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(divsf3.o)
+ .debug_frame   0x00000b24       0x44 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(floatunsisf.o)
+ .debug_frame   0x00000b68       0x38 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(extendsfdf2.o)
+ .debug_frame   0x00000ba0       0x20 /home/tang/riscv/lib/gcc/riscv64-unknown-linux-gnu/12.2.0/lib32/ilp32/libgcc.a(_clzsi2.o)
