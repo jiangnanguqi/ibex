@@ -31,7 +31,7 @@ CC = riscv64-unknown-elf-gcc
 # Flag : CFLAGS
 #	Use this flag to define compiler options. Note, you can add compiler options from the command line using XCFLAGS="other flags"
 PORT_CFLAGS = -g -march=$(RV_ISA) -mabi=ilp32 -static -mcmodel=medlow -mtune=sifive-3-series \
-  -O0 -falign-functions=16 -funroll-all-loops \
+  -O3 -falign-functions=16 -funroll-all-loops \
 	-finline-functions -falign-jumps=4 \
   -nostdlib -nostartfiles -ffreestanding -mstrict-align \
 	-DTOTAL_DATA_SIZE=2000 -DMAIN_HAS_NOARGC=1 \

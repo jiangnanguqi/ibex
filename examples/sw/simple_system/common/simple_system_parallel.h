@@ -5,19 +5,38 @@
 
 // 假设裸机环境下的硬件和编译器支持多线程操作
 
-// 定义线程函数类型
+// Define thread id type
+typedef unsigned int thread_id_t;
+// Define thread state type
+typedef int thread_state_t;
+// Define thread function type
 typedef void *(*thread_func_t)(void*);
 
-// 定义线程控制块（TCB）
+// Define thread state
+#define THREAD_CREATED    0
+#define THREAD_READY      1
+#define THREAD_RUNNING    2
+#define THREAD_BLOCKED    3
+#define THREAD_TERMINATED 4
+
+// Thread Control Block (TCB)
 typedef struct {
-    void* stack_ptr;        // 栈指针
-    thread_func_t function; // 线程函数指针
-    void* arg;              // 线程函数参数
-    // 其他线程相关的信息
+    thread_id_t tid;        // Thread Identifier
+    thread_state_t state;   // Thread State
+    thread_func_t function; // Thread Function Pointer
+    void* arg;              // Thread Function Arguments
+    void* stack_ptr;        // Thread Stack Pointer
 } thread_t;
 
 // 全局变量，用于存储当前活动的线程
 extern thread_t* current_thread;
 
-void thread_create(thread_t* thread, thread_func_t function, void* arg, void* stack_ptr);
-void thread_entry();
+int thread_create(thread_t* thread, thread_id_t id, thread_func_t function, void* arg, void* stack_ptr);
+
+int thread_schedule();
+
+int thread_entry();
+
+int thread_exit();
+
+int thread_join(thread_t* thread);

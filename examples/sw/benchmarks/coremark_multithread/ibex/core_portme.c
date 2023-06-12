@@ -204,22 +204,25 @@ void portable_fini(core_portable *p) {
 #if USE_PTHREAD
 #error "No PThread support"
 #elif USE_SIMPLE
+static int thread_id=0;
 ee_u8 core_start_parallel(core_results *res) {
-  thread_create(&(res->port.thread), iterate, (void *)res, res->memblock);
-  current_thread = &(res->port.thread);
-  thread_entry();
-  // iterate(res);
-	return 0;
+  thread_create(&(res->port.thread), thread_id, iterate, (void *)res, res->memblock);
+  thread_id++;
+  if (thread_schedule(&(res->port.thread))) {
+    thread_entry(&(res->port.thread));
+  } // if not scheduled to a new hart, run here
+	return 1;
 }
 ee_u8 core_stop_parallel(core_results *res) {
-	return 0;
+  thread_join(&(res->port.thread));
+	return 1;
 }
 #elif USE_FAKE
 ee_u8 core_start_parallel(core_results *res) {
   iterate(res);
 }
 ee_u8 core_stop_parallel(core_results *res) {
-	return 0;
+	return 1;
 }
 #else /* no standard multicore implementation */
 #error "Please implement multicore functionality in core_portme.c to use multiple contexts."
