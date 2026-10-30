@@ -1,0 +1,7 @@
+TOP.ibex_simple_system.u_top.u_ibex_tracer: Instruction trace disabled.
+BENCH_SIM_CONFIG core=ibex harts=1 cache=0 rv32m=2 branch_target_alu=0 writeback_stage=0 branch_predictor=0 memory_bytes=1048576 memory_response_cycles=1
+[72731] %Fatal: bench_audit.sv:25: Assertion failed in TOP.ibex_simple_system.imt_hooks.audit: Output occurred with performance counters enabled
+%Error: /workspace/scratch/5fbe2b505eeb/ibex/benchmarks/imt_bench/bench_audit.sv:25: Verilog $stop
+Aborting...
+
+!

@@ -1,0 +1,16 @@
+{
+  "tiny_commit": "4addd0fa08d216e20637637874e084895f289da4",
+  "tflm_commit": "4bb5a53e417b597ce5c2af2079aa8c42eb5fe9da",
+  "model_path": "benchmark/training/anomaly_detection/trained_models/ad01_int8.tflite",
+  "model_sha256": "87cf24194ef93d1d9b11a591d805526b98008e351655d29883c825c9c106ba24",
+  "input_path": "benchmark/reference_submissions/anomaly_detection/datasets/dcase01/normal_id_01_00000000_hist_librosa.bin",
+  "input_sha256": "31bc130d27e3732e1c09db946ccc7bfa130f98739bcd90cfa39d590f61f4d6fa",
+  "model_bytes": 276976,
+  "first_frames": [
+    0,
+    80,
+    160
+  ],
+  "input_elements": 640,
+  "fixture_count": 3
+}

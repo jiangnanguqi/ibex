@@ -1,0 +1,9 @@
+TOP.ibex_simple_system.u_top.u_ibex_tracer: Instruction trace disabled.
+BENCH_SIM_CONFIG core=ibex harts=1 cache=0 rv32m=2 branch_target_alu=0 writeback_stage=0 branch_predictor=0 memory_bytes=1048576 memory_response_cycles=1
+Terminating simulation by software request.
+BENCH_AUDIT windows=1 cycles=66869716 instructions=48062939 output_writes=79 output_during_measurement=0
+BENCH_SIM_EXIT exit=0
+- /workspace/scratch/5fbe2b505eeb/ibex/shared/rtl/sim/simulator_ctrl.sv:93: Verilog $finish
+
+EMBENCH_STATS gsf=12 cycles=66869716 instructions=48062939
+EMBENCH_PASS exit=0

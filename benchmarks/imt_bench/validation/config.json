@@ -1,0 +1,232 @@
+{
+  "core": {
+    "core": "ibex",
+    "source_commit": "bd9917efaa33cbdbd15dd2b2f56932c8398dd898"
+  },
+  "ibex_config": "small",
+  "harts": 1,
+  "cache": false,
+  "ram_bytes": 1048576,
+  "ram_base": "0x00100000",
+  "memory_response_cycles": 1,
+  "isa": "rv32im",
+  "abi": "ilp32",
+  "clock_mhz_assumed": 80,
+  "compiler": "riscv-none-elf-gcc (xPack GNU RISC-V Embedded GCC x86_64) 12.2.0",
+  "targets": {
+    "aha-mont64": {
+      "workload": "embench",
+      "name": "aha-mont64",
+      "gsf": 12,
+      "warmup_heat": 1,
+      "embench_commit": "09c2ed8c3b7008c95d08b038de4a3f6dc103ed70",
+      "elf_sha256": "cb02461be59a748fc901bd01bf76e06c131cbd504064266ef4c2126b0de582d8",
+      "binary_sha256": "9e54d43646115d53fdb23138619869b8bca2b39e320f204a185f8ccded900c3b",
+      "binary_bytes": 62472
+    },
+    "crc32": {
+      "workload": "embench",
+      "name": "crc32",
+      "gsf": 12,
+      "warmup_heat": 1,
+      "embench_commit": "09c2ed8c3b7008c95d08b038de4a3f6dc103ed70",
+      "elf_sha256": "57dd9fffdbbc16210a4c85919a6a0002a1848a0cc9ad91e44045180706c612e6",
+      "binary_sha256": "e271ad64543833735dee1f39b2a057a364ac70a3cd0c4534e6f6cdaa80f9c829",
+      "binary_bytes": 61480
+    },
+    "depthconv": {
+      "workload": "embench",
+      "name": "depthconv",
+      "gsf": 12,
+      "warmup_heat": 1,
+      "embench_commit": "09c2ed8c3b7008c95d08b038de4a3f6dc103ed70",
+      "elf_sha256": "51e3f19af3d5d21710b3aeca70918d392296965c1cab03906236321fc2cfa7fc",
+      "binary_sha256": "1bf2dcf9109ec7a064df036659e50c37f00a24a7f2aeb668bb2e539f4b1d3c4c",
+      "binary_bytes": 60536
+    },
+    "edn": {
+      "workload": "embench",
+      "name": "edn",
+      "gsf": 12,
+      "warmup_heat": 1,
+      "embench_commit": "09c2ed8c3b7008c95d08b038de4a3f6dc103ed70",
+      "elf_sha256": "7c27bea48e18a84493a0d2aef01b5f03097d255afaca85efcef9f5c4f10c41ac",
+      "binary_sha256": "e800dd15b4162316505e9564251bde171a271bd2b0536c64dd2d1ef812ddd0a8",
+      "binary_bytes": 66376
+    },
+    "huffbench": {
+      "workload": "embench",
+      "name": "huffbench",
+      "gsf": 12,
+      "warmup_heat": 1,
+      "embench_commit": "09c2ed8c3b7008c95d08b038de4a3f6dc103ed70",
+      "elf_sha256": "f42c59f6b2b60ed4529f6152d27182a70691ac7e54ee9f10545a6ebe3f613327",
+      "binary_sha256": "b846e36d31f39d3a5c42c800fd9d3997349b2a588dd343450100d09f936e890c",
+      "binary_bytes": 65800
+    },
+    "matmult-int": {
+      "workload": "embench",
+      "name": "matmult-int",
+      "gsf": 12,
+      "warmup_heat": 1,
+      "embench_commit": "09c2ed8c3b7008c95d08b038de4a3f6dc103ed70",
+      "elf_sha256": "005c5fec4b16a2d44fed5ea3b753806b5778d00aa805132aef071e863bac7cf8",
+      "binary_sha256": "9ed4702aa7f4e01c168dab50e3f3ba662d3034fc554557dbfbbcf1c5b4fba07d",
+      "binary_bytes": 62536
+    },
+    "md5sum": {
+      "workload": "embench",
+      "name": "md5sum",
+      "gsf": 12,
+      "warmup_heat": 1,
+      "embench_commit": "09c2ed8c3b7008c95d08b038de4a3f6dc103ed70",
+      "elf_sha256": "78e36dedbeec48b1d1d9aca0f6614ef58dd7db77e74e08ea92f879bdec7aea87",
+      "binary_sha256": "7190b1b2c2f60f6d46b358bc17d4d1507d8b1f0c4065daa0b84299def857113d",
+      "binary_bytes": 61976
+    },
+    "nettle-aes": {
+      "workload": "embench",
+      "name": "nettle-aes",
+      "gsf": 12,
+      "warmup_heat": 1,
+      "embench_commit": "09c2ed8c3b7008c95d08b038de4a3f6dc103ed70",
+      "elf_sha256": "251e45279884f0fccade74f84c015be49b655c795d8e5dad471c9a2bfdc8606e",
+      "binary_sha256": "4726608009724ea3c3d86aae97aabae7678861fd822dc4e5d309731abc65ed2c",
+      "binary_bytes": 74360
+    },
+    "nettle-sha256": {
+      "workload": "embench",
+      "name": "nettle-sha256",
+      "gsf": 12,
+      "warmup_heat": 1,
+      "embench_commit": "09c2ed8c3b7008c95d08b038de4a3f6dc103ed70",
+      "elf_sha256": "bad8820ca5413be0dfe64a40739dbb9a4fc4e2ce40f3694c76523c840a9a7f43",
+      "binary_sha256": "58450efb1f8682c7f798fc4cdfb8628ea7f0d4e82df70fad0aff2672e2b15209",
+      "binary_bytes": 70032
+    },
+    "nsichneu": {
+      "workload": "embench",
+      "name": "nsichneu",
+      "gsf": 12,
+      "warmup_heat": 1,
+      "embench_commit": "09c2ed8c3b7008c95d08b038de4a3f6dc103ed70",
+      "elf_sha256": "7313bec420b2a8f9d030893eeebe22fabcd05e40d13d492c31a759b9d489939c",
+      "binary_sha256": "7d87b911942999e1780a4de343c5fae7e510f2c20add28ca7f97331732fc34d9",
+      "binary_bytes": 78944
+    },
+    "picojpeg": {
+      "workload": "embench",
+      "name": "picojpeg",
+      "gsf": 12,
+      "warmup_heat": 1,
+      "embench_commit": "09c2ed8c3b7008c95d08b038de4a3f6dc103ed70",
+      "elf_sha256": "b1f508caad581fefb188c60882449ef2efcdf567f450122a951e92fb71e2120f",
+      "binary_sha256": "ed99e9a29be75a55d5740d93f3e371cfef4b06e3bff2d9d1f1ce5350b27b198f",
+      "binary_bytes": 84296
+    },
+    "qrduino": {
+      "workload": "embench",
+      "name": "qrduino",
+      "gsf": 12,
+      "warmup_heat": 1,
+      "embench_commit": "09c2ed8c3b7008c95d08b038de4a3f6dc103ed70",
+      "elf_sha256": "dd913715b384538c98f812d20674ea3be741034a175a68c2ab3e9ea66bebe688",
+      "binary_sha256": "b97dfbde462346349b55b6313830a8d3dd1e99d83b4f3c492f018a1f9958ba62",
+      "binary_bytes": 82216
+    },
+    "sglib-combined": {
+      "workload": "embench",
+      "name": "sglib-combined",
+      "gsf": 12,
+      "warmup_heat": 1,
+      "embench_commit": "09c2ed8c3b7008c95d08b038de4a3f6dc103ed70",
+      "elf_sha256": "9933032bf004c91f0f86055ef78f820944b9e658cc7398778f9cd482870114eb",
+      "binary_sha256": "914f047977b68a2d4407444e846ef5bf226823be4b957091550745f7a4845104",
+      "binary_bytes": 75336
+    },
+    "slre": {
+      "workload": "embench",
+      "name": "slre",
+      "gsf": 12,
+      "warmup_heat": 1,
+      "embench_commit": "09c2ed8c3b7008c95d08b038de4a3f6dc103ed70",
+      "elf_sha256": "caf77b37e43bbcfa141c0ae564d66b427f5072350337a2957ed861bc4ca4fc4a",
+      "binary_sha256": "00ed6e4e17fdfcd8af3b9c7f10a89886698d93a4934f55acd59cf93bae91b201",
+      "binary_bytes": 64856
+    },
+    "statemate": {
+      "workload": "embench",
+      "name": "statemate",
+      "gsf": 12,
+      "warmup_heat": 1,
+      "embench_commit": "09c2ed8c3b7008c95d08b038de4a3f6dc103ed70",
+      "elf_sha256": "093ce7d44c377e0f14e5247f71646860f501bd8a537f849c3822049c366cd897",
+      "binary_sha256": "ff19def270a19e50c4694a3d74af4eb48744cd0f4bfa040b2b7802686ca240d3",
+      "binary_bytes": 65512
+    },
+    "tarfind": {
+      "workload": "embench",
+      "name": "tarfind",
+      "gsf": 12,
+      "warmup_heat": 1,
+      "embench_commit": "09c2ed8c3b7008c95d08b038de4a3f6dc103ed70",
+      "elf_sha256": "7fa6f7181e98dfc9f15ad58be16f0c6e2cde9bbfdcf8cb505a24bdcb391f9d54",
+      "binary_sha256": "adb610530b5bc9b143578cf1b2f718038e996bd4813a3655e0cedd0784f9c303",
+      "binary_bytes": 61208
+    },
+    "ud": {
+      "workload": "embench",
+      "name": "ud",
+      "gsf": 12,
+      "warmup_heat": 1,
+      "embench_commit": "09c2ed8c3b7008c95d08b038de4a3f6dc103ed70",
+      "elf_sha256": "9b3c45c872d3e498ee310cd00504a424ac1aaea3fa154701598ab21641a1fb62",
+      "binary_sha256": "6859acb51007254fad68db2c543f158ac0cf55a044d7eb3fbad1e4b6ac88b6b4",
+      "binary_bytes": 63080
+    },
+    "wikisort": {
+      "workload": "embench",
+      "name": "wikisort",
+      "gsf": 12,
+      "warmup_heat": 1,
+      "embench_commit": "09c2ed8c3b7008c95d08b038de4a3f6dc103ed70",
+      "elf_sha256": "cdbce99e2d98afa1a5f1345b66d3c2910286809711fe2918df2556e939b1e1b0",
+      "binary_sha256": "e602c8a691a2334ae7eed609af0a158c1109dd7e3c9bd66b3c0a2fcac9e4f888",
+      "binary_bytes": 80152
+    },
+    "xgboost": {
+      "workload": "embench",
+      "name": "xgboost",
+      "gsf": 12,
+      "warmup_heat": 1,
+      "embench_commit": "09c2ed8c3b7008c95d08b038de4a3f6dc103ed70",
+      "elf_sha256": "05c3b13efc43154456f223095bd3540b156321336851b940ccc857caeaf8cb91",
+      "binary_sha256": "74cd0b688ff28c5e6ff5272de84ae666a9bd043bbbb4887b2afa8b6a2765cc5c",
+      "binary_bytes": 99768
+    },
+    "tiny": {
+      "workload": "tiny",
+      "name": "ad01",
+      "iterations": 12,
+      "assets": {
+        "tiny_commit": "4addd0fa08d216e20637637874e084895f289da4",
+        "tflm_commit": "4bb5a53e417b597ce5c2af2079aa8c42eb5fe9da",
+        "model_path": "benchmark/training/anomaly_detection/trained_models/ad01_int8.tflite",
+        "model_sha256": "87cf24194ef93d1d9b11a591d805526b98008e351655d29883c825c9c106ba24",
+        "input_path": "benchmark/reference_submissions/anomaly_detection/datasets/dcase01/normal_id_01_00000000_hist_librosa.bin",
+        "input_sha256": "31bc130d27e3732e1c09db946ccc7bfa130f98739bcd90cfa39d590f61f4d6fa",
+        "model_bytes": 276976,
+        "first_frames": [
+          0,
+          80,
+          160
+        ],
+        "input_elements": 640,
+        "fixture_count": 3
+      },
+      "elf_sha256": "8bcd8ddb354b141de66a3898a4151146ccfdf3f7e366e110203c0259fa85b541",
+      "binary_sha256": "3aaa774253a6f66209bddf64a81dfb47877693b82cba604f64703e9472e8b304",
+      "binary_bytes": 422908
+    }
+  }
+}

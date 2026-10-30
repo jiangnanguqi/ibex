@@ -1,0 +1,8 @@
+{
+  "test": "output-in-measurement",
+  "passed": true,
+  "expected_rejection": true,
+  "sim_returncode": -6,
+  "reason": "Simulator returned failure",
+  "binary_sha256": "820543677be384d09f697983646c585666eec97f869131bbcd52481e254bdaeb"
+}

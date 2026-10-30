@@ -1,0 +1,253 @@
+{
+  "core": {
+    "core": "ibex",
+    "source_commit": "bd9917efaa33cbdbd15dd2b2f56932c8398dd898"
+  },
+  "config": {
+    "core": {
+      "core": "ibex",
+      "source_commit": "bd9917efaa33cbdbd15dd2b2f56932c8398dd898"
+    },
+    "ibex_config": "small",
+    "harts": 1,
+    "cache": false,
+    "ram_bytes": 1048576,
+    "ram_base": "0x00100000",
+    "memory_response_cycles": 1,
+    "isa": "rv32im",
+    "abi": "ilp32",
+    "clock_mhz_assumed": 80,
+    "compiler": "riscv-none-elf-gcc (xPack GNU RISC-V Embedded GCC x86_64) 12.2.0"
+  },
+  "passed": true,
+  "embench_passed": 19,
+  "embench_total": 19,
+  "tiny_passed": true,
+  "results": [
+    {
+      "name": "aha-mont64",
+      "cycles": 71552973,
+      "instructions": 60674257,
+      "ipc": 0.8479627673891342,
+      "binary_sha256": "9e54d43646115d53fdb23138619869b8bca2b39e320f204a185f8ccded900c3b",
+      "passed": true
+    },
+    {
+      "name": "crc32",
+      "cycles": 66869716,
+      "instructions": 48062939,
+      "ipc": 0.7187549443158993,
+      "binary_sha256": "e271ad64543833735dee1f39b2a057a364ac70a3cd0c4534e6f6cdaa80f9c829",
+      "passed": true
+    },
+    {
+      "name": "depthconv",
+      "cycles": 50846727,
+      "instructions": 30982036,
+      "ipc": 0.6093221300163528,
+      "binary_sha256": "1bf2dcf9109ec7a064df036659e50c37f00a24a7f2aeb668bb2e539f4b1d3c4c",
+      "passed": true
+    },
+    {
+      "name": "edn",
+      "cycles": 69787981,
+      "instructions": 38420538,
+      "ipc": 0.5505323044092649,
+      "binary_sha256": "e800dd15b4162316505e9564251bde171a271bd2b0536c64dd2d1ef812ddd0a8",
+      "passed": true
+    },
+    {
+      "name": "huffbench",
+      "cycles": 41381288,
+      "instructions": 27571695,
+      "ipc": 0.6662841185610269,
+      "binary_sha256": "b846e36d31f39d3a5c42c800fd9d3997349b2a588dd343450100d09f936e890c",
+      "passed": true
+    },
+    {
+      "name": "matmult-int",
+      "cycles": 63650519,
+      "instructions": 36414768,
+      "ipc": 0.5721048087604753,
+      "binary_sha256": "9ed4702aa7f4e01c168dab50e3f3ba662d3034fc554557dbfbbcf1c5b4fba07d",
+      "passed": true
+    },
+    {
+      "name": "md5sum",
+      "cycles": 40408886,
+      "instructions": 31799825,
+      "ipc": 0.7869512908621138,
+      "binary_sha256": "7190b1b2c2f60f6d46b358bc17d4d1507d8b1f0c4065daa0b84299def857113d",
+      "passed": true
+    },
+    {
+      "name": "nettle-aes",
+      "cycles": 67161810,
+      "instructions": 52502293,
+      "ipc": 0.7817283810546499,
+      "binary_sha256": "4726608009724ea3c3d86aae97aabae7678861fd822dc4e5d309731abc65ed2c",
+      "passed": true
+    },
+    {
+      "name": "nettle-sha256",
+      "cycles": 65293794,
+      "instructions": 57084629,
+      "ipc": 0.8742734263535061,
+      "binary_sha256": "58450efb1f8682c7f798fc4cdfb8628ea7f0d4e82df70fad0aff2672e2b15209",
+      "passed": true
+    },
+    {
+      "name": "nsichneu",
+      "cycles": 48938773,
+      "instructions": 26866252,
+      "ipc": 0.5489768204854666,
+      "binary_sha256": "7d87b911942999e1780a4de343c5fae7e510f2c20add28ca7f97331732fc34d9",
+      "passed": true
+    },
+    {
+      "name": "picojpeg",
+      "cycles": 53231881,
+      "instructions": 35435444,
+      "ipc": 0.6656808539228587,
+      "binary_sha256": "ed99e9a29be75a55d5740d93f3e371cfef4b06e3bff2d9d1f1ce5350b27b198f",
+      "passed": true
+    },
+    {
+      "name": "qrduino",
+      "cycles": 49015879,
+      "instructions": 33784856,
+      "ipc": 0.6892634935711344,
+      "binary_sha256": "b97dfbde462346349b55b6313830a8d3dd1e99d83b4f3c492f018a1f9958ba62",
+      "passed": true
+    },
+    {
+      "name": "sglib-combined",
+      "cycles": 51328957,
+      "instructions": 30279922,
+      "ipc": 0.589918902891403,
+      "binary_sha256": "914f047977b68a2d4407444e846ef5bf226823be4b957091550745f7a4845104",
+      "passed": true
+    },
+    {
+      "name": "slre",
+      "cycles": 45755439,
+      "instructions": 30215131,
+      "ipc": 0.6603615146168743,
+      "binary_sha256": "00ed6e4e17fdfcd8af3b9c7f10a89886698d93a4934f55acd59cf93bae91b201",
+      "passed": true
+    },
+    {
+      "name": "statemate",
+      "cycles": 51638346,
+      "instructions": 31018973,
+      "ipc": 0.6006964862894718,
+      "binary_sha256": "ff19def270a19e50c4694a3d74af4eb48744cd0f4bfa040b2b7802686ca240d3",
+      "passed": true
+    },
+    {
+      "name": "tarfind",
+      "cycles": 34540947,
+      "instructions": 12363872,
+      "ipc": 0.3579482635493462,
+      "binary_sha256": "adb610530b5bc9b143578cf1b2f718038e996bd4813a3655e0cedd0784f9c303",
+      "passed": true
+    },
+    {
+      "name": "ud",
+      "cycles": 40596336,
+      "instructions": 13285804,
+      "ipc": 0.3272660862793135,
+      "binary_sha256": "6859acb51007254fad68db2c543f158ac0cf55a044d7eb3fbad1e4b6ac88b6b4",
+      "passed": true
+    },
+    {
+      "name": "wikisort",
+      "cycles": 15406685,
+      "instructions": 9483755,
+      "ipc": 0.615561037302963,
+      "binary_sha256": "e602c8a691a2334ae7eed609af0a158c1109dd7e3c9bd66b3c0a2fcac9e4f888",
+      "passed": true
+    },
+    {
+      "name": "xgboost",
+      "cycles": 57164376,
+      "instructions": 40804519,
+      "ipc": 0.7138102758263293,
+      "binary_sha256": "74cd0b688ff28c5e6ff5272de84ae666a9bd043bbbb4887b2afa8b6a2765cc5c",
+      "passed": true
+    },
+    {
+      "name": "tiny",
+      "cycles": 49304451,
+      "instructions": 29736900,
+      "ipc": 0.6031281029779644,
+      "binary_sha256": "3aaa774253a6f66209bddf64a81dfb47877693b82cba604f64703e9472e8b304",
+      "passed": true
+    }
+  ],
+  "rejection_tests": {
+    "passed": true,
+    "tests": [
+      {
+        "test": "verify-failure",
+        "passed": true,
+        "expected_rejection": true,
+        "sim_returncode": 0,
+        "reason": "Program returned failure",
+        "binary_sha256": "9ad7a558f01af8db75bcad6144bde10fcea578950f3f63af203ece380aaebfd8"
+      },
+      {
+        "test": "output-in-measurement",
+        "passed": true,
+        "expected_rejection": true,
+        "sim_returncode": -6,
+        "reason": "Simulator returned failure",
+        "binary_sha256": "820543677be384d09f697983646c585666eec97f869131bbcd52481e254bdaeb"
+      },
+      {
+        "test": "tiny-bad-golden",
+        "passed": true,
+        "expected_rejection": true,
+        "sim_returncode": 0,
+        "reason": "Program returned failure",
+        "binary_sha256": "68ea90803c1d0bbde6d36f365c46b393b28c70679839bfea24c4a2a59bb10e38"
+      },
+      {
+        "test": "missing_fixture",
+        "passed": true,
+        "expected_rejection": true
+      },
+      {
+        "test": "wrong_score",
+        "passed": true,
+        "expected_rejection": true
+      },
+      {
+        "test": "zero_cycles",
+        "passed": true,
+        "expected_rejection": true
+      },
+      {
+        "test": "counter_disagreement",
+        "passed": true,
+        "expected_rejection": true
+      },
+      {
+        "test": "missing_audit",
+        "passed": true,
+        "expected_rejection": true
+      },
+      {
+        "test": "wrong_cache",
+        "passed": true,
+        "expected_rejection": true
+      }
+    ]
+  },
+  "source_preservation": {
+    "source_commit": "bd9917efaa33cbdbd15dd2b2f56932c8398dd898",
+    "original_blobs_verified": 3503,
+    "original_gitlinks": 0,
+    "original_files_unchanged": true
+  }
+}

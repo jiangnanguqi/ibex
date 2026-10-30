@@ -1,0 +1,54 @@
+{
+  "passed": true,
+  "name": "nettle-aes",
+  "target": {
+    "workload": "embench",
+    "name": "nettle-aes",
+    "gsf": 12,
+    "warmup_heat": 1,
+    "embench_commit": "09c2ed8c3b7008c95d08b038de4a3f6dc103ed70",
+    "elf_sha256": "251e45279884f0fccade74f84c015be49b655c795d8e5dad471c9a2bfdc8606e",
+    "binary_sha256": "4726608009724ea3c3d86aae97aabae7678861fd822dc4e5d309731abc65ed2c",
+    "binary_bytes": 74360
+  },
+  "config": {
+    "core": {
+      "core": "ibex",
+      "source_commit": "bd9917efaa33cbdbd15dd2b2f56932c8398dd898"
+    },
+    "ibex_config": "small",
+    "harts": 1,
+    "cache": false,
+    "ram_bytes": 1048576,
+    "ram_base": "0x00100000",
+    "memory_response_cycles": 1,
+    "isa": "rv32im",
+    "abi": "ilp32",
+    "clock_mhz_assumed": 80,
+    "compiler": "riscv-none-elf-gcc (xPack GNU RISC-V Embedded GCC x86_64) 12.2.0"
+  },
+  "sim_returncode": 0,
+  "host_wall_seconds": 59.95975576899946,
+  "gsf": 12,
+  "cycles": 67161810,
+  "instructions": 52502293,
+  "ipc": 0.7817283810546499,
+  "sim_config": {
+    "core": "ibex",
+    "harts": "1",
+    "cache": "0",
+    "rv32m": "2",
+    "branch_target_alu": "0",
+    "writeback_stage": "0",
+    "branch_predictor": "0",
+    "memory_bytes": "1048576",
+    "memory_response_cycles": "1"
+  },
+  "audit": {
+    "windows": "1",
+    "cycles": "67161810",
+    "instructions": "52502293",
+    "output_writes": "79",
+    "output_during_measurement": "0"
+  }
+}

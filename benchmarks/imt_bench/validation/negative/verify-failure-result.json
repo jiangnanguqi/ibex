@@ -1,0 +1,8 @@
+{
+  "test": "verify-failure",
+  "passed": true,
+  "expected_rejection": true,
+  "sim_returncode": 0,
+  "reason": "Program returned failure",
+  "binary_sha256": "9ad7a558f01af8db75bcad6144bde10fcea578950f3f63af203ece380aaebfd8"
+}

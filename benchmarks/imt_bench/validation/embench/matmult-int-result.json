@@ -1,0 +1,54 @@
+{
+  "passed": true,
+  "name": "matmult-int",
+  "target": {
+    "workload": "embench",
+    "name": "matmult-int",
+    "gsf": 12,
+    "warmup_heat": 1,
+    "embench_commit": "09c2ed8c3b7008c95d08b038de4a3f6dc103ed70",
+    "elf_sha256": "005c5fec4b16a2d44fed5ea3b753806b5778d00aa805132aef071e863bac7cf8",
+    "binary_sha256": "9ed4702aa7f4e01c168dab50e3f3ba662d3034fc554557dbfbbcf1c5b4fba07d",
+    "binary_bytes": 62536
+  },
+  "config": {
+    "core": {
+      "core": "ibex",
+      "source_commit": "bd9917efaa33cbdbd15dd2b2f56932c8398dd898"
+    },
+    "ibex_config": "small",
+    "harts": 1,
+    "cache": false,
+    "ram_bytes": 1048576,
+    "ram_base": "0x00100000",
+    "memory_response_cycles": 1,
+    "isa": "rv32im",
+    "abi": "ilp32",
+    "clock_mhz_assumed": 80,
+    "compiler": "riscv-none-elf-gcc (xPack GNU RISC-V Embedded GCC x86_64) 12.2.0"
+  },
+  "sim_returncode": 0,
+  "host_wall_seconds": 65.46370265899986,
+  "gsf": 12,
+  "cycles": 63650519,
+  "instructions": 36414768,
+  "ipc": 0.5721048087604753,
+  "sim_config": {
+    "core": "ibex",
+    "harts": "1",
+    "cache": "0",
+    "rv32m": "2",
+    "branch_target_alu": "0",
+    "writeback_stage": "0",
+    "branch_predictor": "0",
+    "memory_bytes": "1048576",
+    "memory_response_cycles": "1"
+  },
+  "audit": {
+    "windows": "1",
+    "cycles": "63650519",
+    "instructions": "36414768",
+    "output_writes": "79",
+    "output_during_measurement": "0"
+  }
+}

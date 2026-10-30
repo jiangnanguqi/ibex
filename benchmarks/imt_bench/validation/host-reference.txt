@@ -1,0 +1,4 @@
+fixture=0 output_bytes=640 hash=074ac5f5 score=11.6761684 arena=13280
+fixture=1 output_bytes=640 hash=f29d8186 score=10.2978821 arena=13280
+fixture=2 output_bytes=640 hash=5684552e score=10.8633385 arena=13280
+repeated_inference first_hash=074ac5f5 next_hash=074ac5f5

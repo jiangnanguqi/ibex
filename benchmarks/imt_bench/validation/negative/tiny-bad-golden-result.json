@@ -1,0 +1,8 @@
+{
+  "test": "tiny-bad-golden",
+  "passed": true,
+  "expected_rejection": true,
+  "sim_returncode": 0,
+  "reason": "Program returned failure",
+  "binary_sha256": "68ea90803c1d0bbde6d36f365c46b393b28c70679839bfea24c4a2a59bb10e38"
+}

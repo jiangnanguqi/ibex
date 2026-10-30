@@ -1,0 +1,59 @@
+{
+  "passed": true,
+  "tests": [
+    {
+      "test": "verify-failure",
+      "passed": true,
+      "expected_rejection": true,
+      "sim_returncode": 0,
+      "reason": "Program returned failure",
+      "binary_sha256": "9ad7a558f01af8db75bcad6144bde10fcea578950f3f63af203ece380aaebfd8"
+    },
+    {
+      "test": "output-in-measurement",
+      "passed": true,
+      "expected_rejection": true,
+      "sim_returncode": -6,
+      "reason": "Simulator returned failure",
+      "binary_sha256": "820543677be384d09f697983646c585666eec97f869131bbcd52481e254bdaeb"
+    },
+    {
+      "test": "tiny-bad-golden",
+      "passed": true,
+      "expected_rejection": true,
+      "sim_returncode": 0,
+      "reason": "Program returned failure",
+      "binary_sha256": "68ea90803c1d0bbde6d36f365c46b393b28c70679839bfea24c4a2a59bb10e38"
+    },
+    {
+      "test": "missing_fixture",
+      "passed": true,
+      "expected_rejection": true
+    },
+    {
+      "test": "wrong_score",
+      "passed": true,
+      "expected_rejection": true
+    },
+    {
+      "test": "zero_cycles",
+      "passed": true,
+      "expected_rejection": true
+    },
+    {
+      "test": "counter_disagreement",
+      "passed": true,
+      "expected_rejection": true
+    },
+    {
+      "test": "missing_audit",
+      "passed": true,
+      "expected_rejection": true
+    },
+    {
+      "test": "wrong_cache",
+      "passed": true,
+      "expected_rejection": true
+    }
+  ]
+}

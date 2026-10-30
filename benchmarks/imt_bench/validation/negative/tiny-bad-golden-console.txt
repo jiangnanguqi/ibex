@@ -1,0 +1,14 @@
+TOP.ibex_simple_system.u_top.u_ibex_tracer: Instruction trace disabled.
+BENCH_SIM_CONFIG core=ibex harts=1 cache=0 rv32m=2 branch_target_alu=0 writeback_stage=0 branch_predictor=0 memory_bytes=1048576 memory_response_cycles=1
+Terminating simulation by software request.
+BENCH_AUDIT windows=0 cycles=0 instructions=0 output_writes=465 output_during_measurement=0
+BENCH_SIM_EXIT exit=3
+- /workspace/scratch/5fbe2b505eeb/ibex/shared/rtl/sim/simulator_ctrl.sv:93: Verilog $finish
+
+MLPerf Tiny ad01: single HART, portable int8 TFLM
+TINY_ARENA hart=0 used_bytes=8076 reserved_bytes=65536
+TINY_CHECK hart=0 fixture=0 mismatches=1 hash=074ac5f5 score_bits=413ad196 expected_score_bits=413ad196
+TINY_STATS hart=0 iterations=0 cycles=0 instructions=0
+TINY_FAIL hart=0 fixtures=1 output_bytes_per_fixture=640 measured_output=FAIL exit=3
+TINY_TOTAL harts=1 total_inferences=0 window_cycles=0 instructions=0
+TINY_ALL_FAIL harts=1 uart_after_measurement=1

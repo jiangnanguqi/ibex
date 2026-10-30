@@ -1,0 +1,102 @@
+{
+  "passed": true,
+  "name": "tiny",
+  "target": {
+    "workload": "tiny",
+    "name": "ad01",
+    "iterations": 12,
+    "assets": {
+      "tiny_commit": "4addd0fa08d216e20637637874e084895f289da4",
+      "tflm_commit": "4bb5a53e417b597ce5c2af2079aa8c42eb5fe9da",
+      "model_path": "benchmark/training/anomaly_detection/trained_models/ad01_int8.tflite",
+      "model_sha256": "87cf24194ef93d1d9b11a591d805526b98008e351655d29883c825c9c106ba24",
+      "input_path": "benchmark/reference_submissions/anomaly_detection/datasets/dcase01/normal_id_01_00000000_hist_librosa.bin",
+      "input_sha256": "31bc130d27e3732e1c09db946ccc7bfa130f98739bcd90cfa39d590f61f4d6fa",
+      "model_bytes": 276976,
+      "first_frames": [
+        0,
+        80,
+        160
+      ],
+      "input_elements": 640,
+      "fixture_count": 3
+    },
+    "elf_sha256": "8bcd8ddb354b141de66a3898a4151146ccfdf3f7e366e110203c0259fa85b541",
+    "binary_sha256": "3aaa774253a6f66209bddf64a81dfb47877693b82cba604f64703e9472e8b304",
+    "binary_bytes": 422908
+  },
+  "config": {
+    "core": {
+      "core": "ibex",
+      "source_commit": "bd9917efaa33cbdbd15dd2b2f56932c8398dd898"
+    },
+    "ibex_config": "small",
+    "harts": 1,
+    "cache": false,
+    "ram_bytes": 1048576,
+    "ram_base": "0x00100000",
+    "memory_response_cycles": 1,
+    "isa": "rv32im",
+    "abi": "ilp32",
+    "clock_mhz_assumed": 80,
+    "compiler": "riscv-none-elf-gcc (xPack GNU RISC-V Embedded GCC x86_64) 12.2.0"
+  },
+  "sim_returncode": 0,
+  "host_wall_seconds": 60.38094938700033,
+  "checks": [
+    {
+      "hart": "0",
+      "fixture": "0",
+      "mismatches": "0",
+      "hash": "074ac5f5",
+      "score_bits": "413ad196",
+      "expected_score_bits": "413ad196"
+    },
+    {
+      "hart": "0",
+      "fixture": "1",
+      "mismatches": "0",
+      "hash": "f29d8186",
+      "score_bits": "4124c420",
+      "expected_score_bits": "4124c420"
+    },
+    {
+      "hart": "0",
+      "fixture": "2",
+      "mismatches": "0",
+      "hash": "5684552e",
+      "score_bits": "412dd03c",
+      "expected_score_bits": "412dd03c"
+    }
+  ],
+  "arena": {
+    "hart": "0",
+    "used_bytes": "8076",
+    "reserved_bytes": "65536"
+  },
+  "iterations": 12,
+  "cycles": 49304451,
+  "instructions": 29736900,
+  "ipc": 0.6031281029779644,
+  "sim_config": {
+    "core": "ibex",
+    "harts": "1",
+    "cache": "0",
+    "rv32m": "2",
+    "branch_target_alu": "0",
+    "writeback_stage": "0",
+    "branch_predictor": "0",
+    "memory_bytes": "1048576",
+    "memory_response_cycles": "1"
+  },
+  "audit": {
+    "windows": "1",
+    "cycles": "49304451",
+    "instructions": "29736900",
+    "output_writes": "703",
+    "output_during_measurement": "0"
+  },
+  "cycles_per_inference": 4108704.25,
+  "ms_per_inference": 51.358803125,
+  "inferences_per_second": 19.470858726324728
+}
