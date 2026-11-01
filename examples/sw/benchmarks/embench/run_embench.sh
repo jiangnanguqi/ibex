@@ -7,12 +7,15 @@
 # and the performance counters, as for CoreMark) followed by the program's own
 # output from ibex_simple_system.log (the "Embench cycles=... instret=..." and
 # "Main Exit=..." lines); the performance-counter CSV is kept beside it.
+# Environment: SIM (simulator binary) and LOG_DIR (where the logs go)
+# override the defaults below, e.g. to keep runs of different
+# configurations apart.
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/../../../.." && pwd)"
 EMB_DIR="$ROOT/examples/sw/benchmarks/embench"
 SIM="${SIM:-$ROOT/build/lowrisc_ibex_ibex_simple_system_0/sim-verilator/Vibex_simple_system}"
-LOG_DIR="$EMB_DIR/runlogs"
+LOG_DIR="${LOG_DIR:-$EMB_DIR/runlogs}"
 
 mkdir -p "$LOG_DIR"
 cd "$LOG_DIR"

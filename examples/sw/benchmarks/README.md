@@ -135,14 +135,38 @@ Embench's `support/main.c` and the benchmark sources are compiled unchanged;
 `ibex/embench_report.c` wraps `main()` (linked with `--wrap=main`) to print the
 counters and the verification result afterwards.
 
-To build all benchmarks (the ELF files are placed in the benchmark directory):
+The simulator is Simple System built for one of the configurations in
+`ibex_configs.yaml` (the recorded runs use `small`; `maxperf` is the other
+one of interest), from the repository root:
+
+```
+fusesoc --cores-root=. run --target=sim --setup --build \
+  lowrisc:ibex:ibex_simple_system $(./util/ibex_config.py small fusesoc_opts)
+```
+
+`examples/simple_system/ibex_simple_system.core` has `-Wno-MULTIDRIVEN` in
+place of `-Wall` in its sim target, as on this fork's `localBranch`: with
+`-Wall`, Verilator 5 stops on lint warnings. FuseSoC always builds into
+`build/lowrisc_ibex_ibex_simple_system_0`, so copy the simulator elsewhere
+before building another configuration. Where FuseSoC cannot be installed,
+`common/fallback/build_simple_system.sh <config> [<output dir>]` builds the
+same simulator directly with Verilator (see the comments in it).
+
+To build all benchmarks (the ELF files are placed in the benchmark directory;
+`RISCV_TOOLS` selects the toolchain prefix, default `riscv64-unknown-elf`):
 
 ```
 git submodule update --init vendor/embench-iot
 make -C ./examples/sw/benchmarks/embench
 ```
 
-To run them all (after building a suitable simulator binary, see above):
+Embench's build needs scons (`pip install scons`). Where scons cannot be
+installed, `common/fallback/build_embench_without_scons.sh
+examples/sw/benchmarks/embench` builds the same ELF files (see the comments
+in it).
+
+To run them all (after building a suitable simulator binary, see above;
+`SIM` and `LOG_DIR` override the simulator and the log directory):
 
 ```
 ./examples/sw/benchmarks/embench/run_embench.sh
@@ -155,7 +179,7 @@ simulator output (simulation statistics and performance counters) followed by
 the program's output:
 
 ```
-Embench cycles=45755440 instret=30215132
+Embench cycles=45755437 instret=30215130
 Main Exit=0
 ```
 
@@ -196,6 +220,11 @@ The report in `runlogs/tiny-ad01.log` lists the three fixture checks
 
 ## Recorded results
 
-`embench/validation` and `mlperf_tiny/validation` keep the records of the
-single-hart runs (Ibex `small` configuration, `-Wno-MULTIDRIVEN` as on this
-fork's `localBranch`); `VALIDATION.md` there summarises them.
+Each recorded run is kept in `embench/validation/<YYYYMMDD>-<configuration>/`
+and `mlperf_tiny/validation/<YYYYMMDD>-<configuration>/`, with a
+`VALIDATION.md` (configuration, tool versions, how the simulator and the
+programs were built, the results table) and the run logs in `runlogs/`.
+`20261101-small` is the first run of this flow (Ibex `small`). The subfolder
+`codex-20261030` holds the records of the earlier port (`benchmarks/imt_bench`
+on branch `codex/embench-mlperf-single-hart-20261030`), which linked with a
+global pointer and so has slightly different instruction counts.
