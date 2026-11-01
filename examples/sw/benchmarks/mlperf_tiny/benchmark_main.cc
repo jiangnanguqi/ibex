@@ -19,9 +19,9 @@ int Check(int fixture, bool report) {
                                 kExpectedScoreBits[fixture]);
   return mismatches != 0 || score != kExpectedScoreBits[fixture];
 }
-}  // namespace
 
-int main() {
+// Returns the exit status: 0 only when every check passed.
+int Run() {
   using namespace imt_tiny;
   const int status = Initialize();
   if (status) { tiny_print_error("initialize", status); return 1; }
@@ -47,5 +47,11 @@ int main() {
   tiny_print_measurement(TINY_ITERATIONS);
   tiny_mark_pass();
   return 0;
+}
+}  // namespace
+
+int main() {
+  tiny_runtime_init();
+  tiny_finish(Run());  // prints the report and halts the simulation
 }
 

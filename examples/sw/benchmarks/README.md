@@ -115,3 +115,87 @@ from reporting an error if it executes for less than 10 seconds. This violates
 the run reporting rules (though does not effect benchmark execution). It is
 trivial to restore `core_main.c` to the version supplied by EEMBC in the
 CoreMark repository if an official result is desired.
+
+## Embench
+
+Embench (https://github.com/embench/embench-iot) is a benchmark suite for
+embedded cores. It is a git submodule at `vendor/embench-iot`, pinned to the
+revision used by the riscv-imt-model platform (`09c2ed8`, 19 benchmarks). The
+Ibex board port, a Makefile wrapper around Embench's own scons build and a run
+script are in `examples/sw/benchmarks/embench`. The wrapper follows the
+platform's `sw/examples/embench` so that the same sources, compiler options
+(`-O3`, `-march=rv32im -mabi=ilp32`, strict alignment, `GSF=12`,
+`WARMUP_HEAT=1`) and measured region are used on both.
+
+The measured region is `benchmark()` between Embench's `start_trigger()` and
+`stop_trigger()` hooks (`ibex/boardsupport.c`), which reset and enable the
+performance counters and disable them again, as the CoreMark port does.
+Initialisation, warm-up, result verification and the report are outside it.
+Embench's `support/main.c` and the benchmark sources are compiled unchanged;
+`ibex/embench_report.c` wraps `main()` (linked with `--wrap=main`) to print the
+counters and the verification result afterwards.
+
+To build all benchmarks (the ELF files are placed in the benchmark directory):
+
+```
+git submodule update --init vendor/embench-iot
+make -C ./examples/sw/benchmarks/embench
+```
+
+To run them all (after building a suitable simulator binary, see above):
+
+```
+./examples/sw/benchmarks/embench/run_embench.sh
+```
+
+The script passes `+ibex_tracer_enable=0`, which leaves out the instruction
+trace (`trace_core_00000000.log`, gigabytes for these runs); drop it from the
+script for a trace. Each benchmark's log in `examples/sw/benchmarks/embench/runlogs` holds the
+simulator output (simulation statistics and performance counters) followed by
+the program's output:
+
+```
+Embench cycles=45755440 instret=30215132
+Main Exit=0
+```
+
+`Main Exit=0` means the benchmark's own `verify_benchmark()` accepted the
+result. The counts are raw cycle and retired-instruction counts of the measured
+region (plus the few instructions of the counter control), not Embench's
+normalised scores. The linker script (`common/link.ld`) deliberately defines no
+`__global_pointer$`, like Simple System's, so that no small-data access is
+relaxed to gp-relative addressing and the instruction counts can be compared
+with the platform's single-hart runs; see the note in the script.
+
+## MLPerf Tiny (anomaly detection, ad01)
+
+`examples/sw/benchmarks/mlperf_tiny` runs the MLPerf Tiny anomaly-detection
+benchmark (the ad01 INT8 model on TensorFlow Lite Micro's portable kernels)
+in the same way as the platform's `sw/examples/mlperf_tiny`: MLCommons Tiny and
+TFLM are fetched at pinned revisions by `prepare.py` (into `.deps/`, or
+`TINY_DIR`/`TFLM_DIR`), the model and input hashes are checked, three real
+input windows are checked against outputs computed by a native build of the
+same kernels (`golden.h`), one untimed warm-up is run, and `ITERATIONS`
+(default 12) calls of `Invoke()` are measured. This is not the official MLPerf
+Tiny submission flow (no Runner, no full-dataset accuracy); it measures the
+inference latency of the model only.
+
+The bare-metal runtime is Simple System's; `ibex/platform.c` adds the C++
+constructor calls, the newlib system calls and heap, the counter control and
+the report, which is buffered and printed only after the measured region.
+
+```
+make -C ./examples/sw/benchmarks/mlperf_tiny
+./examples/sw/benchmarks/mlperf_tiny/run_tiny.sh
+```
+
+The report in `runlogs/tiny-ad01.log` lists the three fixture checks
+(`TINY_CHECK ... mismatches=0`), the measured counts
+(`TINY_STATS iterations=12 cycles=... instructions=...`), `TINY_PASS` and
+`Main Exit=0`. Latency per inference is cycles / iterations.
+
+## Recorded results
+
+`embench/validation` and `mlperf_tiny/validation` keep the records of the
+single-hart runs (Ibex `small` configuration, `-Wno-MULTIDRIVEN` as on this
+fork's `localBranch`); `VALIDATION.md` there summarises them.

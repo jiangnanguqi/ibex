@@ -1,3 +1,10 @@
+<!-- Record of the original codex port (benchmarks/imt_bench on branch
+codex/embench-mlperf-single-hart-20261030, 2026-10-30), kept unchanged for
+reference. That port used its own start-up code, linker script and Verilator
+driver, and defined __global_pointer$, so its instruction counts include
+gp-relative relaxation of some small-data accesses (e.g. crc32's seed) and are
+not identical to those of the current flow; see ../VALIDATION.md. -->
+
 # Recorded single-HART validation
 
 All 19 Embench programs and MLPerf Tiny ad01 passed on ibex. All original
