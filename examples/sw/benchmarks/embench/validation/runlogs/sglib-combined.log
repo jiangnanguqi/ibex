@@ -1,0 +1,38 @@
+Program header number 0 in `/home/claude/ibex/examples/sw/benchmarks/embench/sglib-combined.elf' is not of type PT_LOAD; ignoring.
+Simulation of Ibex
+==================
+
+Tracing can be toggled by sending SIGUSR1 to this process:
+$ kill -USR1 7078
+TOP.ibex_simple_system.u_top.u_ibex_tracer: Instruction trace disabled.
+
+Simulation running, end by pressing CTRL-c.
+Terminating simulation by software request.
+- /home/claude/ibex/shared/rtl/sim/simulator_ctrl.sv:93: Verilog $finish
+Received $finish() from Verilog, shutting down simulation.
+
+Simulation statistics
+=====================
+Executed cycles:  51499299
+Wallclock time:   56.803 s
+Simulation speed: 906630 cycles/s (906.63 kHz)
+
+Performance Counters
+====================
+Cycles:                     51337141
+NONE:                       0
+Instructions Retired:       30288107
+LSU Busy:                   0
+Fetch Wait:                 0
+Loads:                      0
+Stores:                     0
+Jumps:                      0
+Conditional Branches:       0
+Taken Conditional Branches: 0
+Compressed Instructions:    0
+Multiply Wait:              0
+Divide Wait:                0
+
+--- ibex_simple_system.log ---
+Embench cycles=51337141 instret=30288107
+Main Exit=0

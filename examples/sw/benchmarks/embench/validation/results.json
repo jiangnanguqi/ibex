@@ -1,0 +1,192 @@
+{
+  "aha-mont64": {
+    "cycles": 71552973,
+    "instructions": 60674258,
+    "exit": 0,
+    "passed": true,
+    "simulator_counters": {
+      "cycles": 71552973,
+      "instructions": 60674258
+    }
+  },
+  "crc32": {
+    "cycles": 68960714,
+    "instructions": 50153938,
+    "exit": 0,
+    "passed": true,
+    "simulator_counters": {
+      "cycles": 68960714,
+      "instructions": 50153938
+    }
+  },
+  "depthconv": {
+    "cycles": 50886061,
+    "instructions": 31021371,
+    "exit": 0,
+    "passed": true,
+    "simulator_counters": {
+      "cycles": 50886061,
+      "instructions": 31021371
+    }
+  },
+  "edn": {
+    "cycles": 69855053,
+    "instructions": 38487611,
+    "exit": 0,
+    "passed": true,
+    "simulator_counters": {
+      "cycles": 69855053,
+      "instructions": 38487611
+    }
+  },
+  "huffbench": {
+    "cycles": 41381815,
+    "instructions": 27572223,
+    "exit": 0,
+    "passed": true,
+    "simulator_counters": {
+      "cycles": 41381815,
+      "instructions": 27572223
+    }
+  },
+  "matmult-int": {
+    "cycles": 63650988,
+    "instructions": 36415238,
+    "exit": 0,
+    "passed": true,
+    "simulator_counters": {
+      "cycles": 63650988,
+      "instructions": 36415238
+    }
+  },
+  "md5sum": {
+    "cycles": 40412848,
+    "instructions": 31803788,
+    "exit": 0,
+    "passed": true,
+    "simulator_counters": {
+      "cycles": 40412848,
+      "instructions": 31803788
+    }
+  },
+  "nettle-aes": {
+    "cycles": 67162725,
+    "instructions": 52503209,
+    "exit": 0,
+    "passed": true,
+    "simulator_counters": {
+      "cycles": 67162725,
+      "instructions": 52503209
+    }
+  },
+  "nettle-sha256": {
+    "cycles": 65293792,
+    "instructions": 57084628,
+    "exit": 0,
+    "passed": true,
+    "simulator_counters": {
+      "cycles": 65293792,
+      "instructions": 57084628
+    }
+  },
+  "nsichneu": {
+    "cycles": 48953557,
+    "instructions": 26881037,
+    "exit": 0,
+    "passed": true,
+    "simulator_counters": {
+      "cycles": 48953557,
+      "instructions": 26881037
+    }
+  },
+  "picojpeg": {
+    "cycles": 53705940,
+    "instructions": 35909504,
+    "exit": 0,
+    "passed": true,
+    "simulator_counters": {
+      "cycles": 53705940,
+      "instructions": 35909504
+    }
+  },
+  "qrduino": {
+    "cycles": 49049358,
+    "instructions": 33818336,
+    "exit": 0,
+    "passed": true,
+    "simulator_counters": {
+      "cycles": 49049358,
+      "instructions": 33818336
+    }
+  },
+  "sglib-combined": {
+    "cycles": 51337141,
+    "instructions": 30288107,
+    "exit": 0,
+    "passed": true,
+    "simulator_counters": {
+      "cycles": 51337141,
+      "instructions": 30288107
+    }
+  },
+  "slre": {
+    "cycles": 45755437,
+    "instructions": 30215130,
+    "exit": 0,
+    "passed": true,
+    "simulator_counters": {
+      "cycles": 45755437,
+      "instructions": 30215130
+    }
+  },
+  "statemate": {
+    "cycles": 62147825,
+    "instructions": 41528453,
+    "exit": 0,
+    "passed": true,
+    "simulator_counters": {
+      "cycles": 62147825,
+      "instructions": 41528453
+    }
+  },
+  "tarfind": {
+    "cycles": 34540945,
+    "instructions": 12363871,
+    "exit": 0,
+    "passed": true,
+    "simulator_counters": {
+      "cycles": 34540945,
+      "instructions": 12363871
+    }
+  },
+  "ud": {
+    "cycles": 40639176,
+    "instructions": 13328645,
+    "exit": 0,
+    "passed": true,
+    "simulator_counters": {
+      "cycles": 40639176,
+      "instructions": 13328645
+    }
+  },
+  "wikisort": {
+    "cycles": 15406683,
+    "instructions": 9483754,
+    "exit": 0,
+    "passed": true,
+    "simulator_counters": {
+      "cycles": 15406683,
+      "instructions": 9483754
+    }
+  },
+  "xgboost": {
+    "cycles": 57164374,
+    "instructions": 40804518,
+    "exit": 0,
+    "passed": true,
+    "simulator_counters": {
+      "cycles": 57164374,
+      "instructions": 40804518
+    }
+  }
+}

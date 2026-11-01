@@ -1,0 +1,38 @@
+Program header number 0 in `/home/claude/ibex/examples/sw/benchmarks/embench/matmult-int.elf' is not of type PT_LOAD; ignoring.
+Simulation of Ibex
+==================
+
+Tracing can be toggled by sending SIGUSR1 to this process:
+$ kill -USR1 6605
+TOP.ibex_simple_system.u_top.u_ibex_tracer: Instruction trace disabled.
+
+Simulation running, end by pressing CTRL-c.
+Terminating simulation by software request.
+- /home/claude/ibex/shared/rtl/sim/simulator_ctrl.sv:93: Verilog $finish
+Received $finish() from Verilog, shutting down simulation.
+
+Simulation statistics
+=====================
+Executed cycles:  63846183
+Wallclock time:   70.405 s
+Simulation speed: 906842 cycles/s (906.842 kHz)
+
+Performance Counters
+====================
+Cycles:                     63650988
+NONE:                       0
+Instructions Retired:       36415238
+LSU Busy:                   0
+Fetch Wait:                 0
+Loads:                      0
+Stores:                     0
+Jumps:                      0
+Conditional Branches:       0
+Taken Conditional Branches: 0
+Compressed Instructions:    0
+Multiply Wait:              0
+Divide Wait:                0
+
+--- ibex_simple_system.log ---
+Embench cycles=63650988 instret=36415238
+Main Exit=0

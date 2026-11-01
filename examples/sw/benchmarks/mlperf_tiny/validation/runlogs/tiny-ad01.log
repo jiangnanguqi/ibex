@@ -1,0 +1,44 @@
+Program header number 0 in `/home/claude/ibex/examples/sw/benchmarks/mlperf_tiny/tiny-ad01.elf' is not of type PT_LOAD; ignoring.
+Simulation of Ibex
+==================
+
+Tracing can be toggled by sending SIGUSR1 to this process:
+$ kill -USR1 7301
+TOP.ibex_simple_system.u_top.u_ibex_tracer: Instruction trace disabled.
+
+Simulation running, end by pressing CTRL-c.
+Terminating simulation by software request.
+- /home/claude/ibex/shared/rtl/sim/simulator_ctrl.sv:93: Verilog $finish
+Received $finish() from Verilog, shutting down simulation.
+
+Simulation statistics
+=====================
+Executed cycles:  69343946
+Wallclock time:   75.332 s
+Simulation speed: 920511 cycles/s (920.511 kHz)
+
+Performance Counters
+====================
+Cycles:                     49304456
+NONE:                       0
+Instructions Retired:       29736908
+LSU Busy:                   0
+Fetch Wait:                 0
+Loads:                      0
+Stores:                     0
+Jumps:                      0
+Conditional Branches:       0
+Taken Conditional Branches: 0
+Compressed Instructions:    0
+Multiply Wait:              0
+Divide Wait:                0
+
+--- ibex_simple_system.log ---
+MLPerf Tiny ad01: single hart, portable int8 TFLM
+TINY_ARENA used_bytes=8076 reserved_bytes=65536
+TINY_CHECK fixture=0 mismatches=0 hash=074ac5f5 score_bits=413ad196 expected_score_bits=413ad196
+TINY_CHECK fixture=1 mismatches=0 hash=f29d8186 score_bits=4124c420 expected_score_bits=4124c420
+TINY_CHECK fixture=2 mismatches=0 hash=5684552e score_bits=412dd03c expected_score_bits=412dd03c
+TINY_STATS iterations=12 cycles=49304456 instructions=29736908
+TINY_PASS fixtures=3 output_bytes_per_fixture=640 measured_output=PASS exit=0
+Main Exit=0

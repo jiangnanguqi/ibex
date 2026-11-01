@@ -1,0 +1,5 @@
+build-embench/
+/runlogs/
+*.elf
+*.dis
+*.map

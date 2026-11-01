@@ -1,0 +1,31 @@
+{
+  "iterations": 12,
+  "cycles": 49304456,
+  "instructions": 29736908,
+  "checks": [
+    {
+      "fixture": 0,
+      "mismatches": 0,
+      "hash": "074ac5f5",
+      "score_bits": "413ad196"
+    },
+    {
+      "fixture": 1,
+      "mismatches": 0,
+      "hash": "f29d8186",
+      "score_bits": "4124c420"
+    },
+    {
+      "fixture": 2,
+      "mismatches": 0,
+      "hash": "5684552e",
+      "score_bits": "412dd03c"
+    }
+  ],
+  "passed": true,
+  "exit": 0,
+  "simulator_counters": {
+    "cycles": 49304456,
+    "instructions": 29736908
+  }
+}
