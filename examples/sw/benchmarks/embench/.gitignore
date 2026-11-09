@@ -1,5 +1,6 @@
 build-embench/
 /runlogs/
+/scores/
 *.elf
 *.dis
 *.map

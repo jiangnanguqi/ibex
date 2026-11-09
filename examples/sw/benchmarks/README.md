@@ -191,6 +191,55 @@ normalised scores. The linker script (`common/link.ld`) deliberately defines no
 relaxed to gp-relative addressing and the instruction counts can be compared
 with the platform's single-hart runs; see the note in the script.
 
+### Speed score
+
+`embench/run_embench_score.sh` measures Embench's speed score with Embench's
+own script, `vendor/embench-iot/benchmark_speed.py`, as Embench's user guide
+(`vendor/embench-iot/doc/README.md`) describes; the flow is the same as the
+riscv-imt-model platform's `run_embench_score.sh` and the CV32E40P port's.
+`benchmark_speed.py` runs every benchmark through the target module
+`embench/ibex/run_ibex_simple_system.py`, which runs the ELF file on the
+simulator as `run_embench.sh` does, in a directory of its own, and returns the
+time of the measured region: the `Embench cycles=` count divided by the clock
+frequency. A run counts only if the program ends the simulation without an
+exception and prints `Main Exit=0`.
+
+For each benchmark, Speed is the reference platform's time
+(`baseline-data/speed.json`) divided by this time, times the GSF, and
+Speed/MHz is Speed divided by the clock frequency in MHz:
+
+    Speed/MHz = t_ref * GSF * 1000 / cycles        (t_ref in ms)
+
+The reference platform is an Arm Cortex-M4 at 16 MHz (GCC 14.1.0 at `-O2`,
+GSF 16), whose Speed/MHz is 1 on every benchmark. The score is the geometric
+mean over the benchmarks, given with the geometric standard deviation and the
+range of one standard deviation. Speed/MHz depends only on the cycle counts;
+Speed also needs the clock frequency (`-f`).
+
+```
+./examples/sw/benchmarks/embench/run_embench_score.sh -C small
+./examples/sw/benchmarks/embench/run_embench_score.sh -C maxperf
+./examples/sw/benchmarks/embench/run_embench_score.sh -R DIR -f 100
+```
+
+The script builds the benchmarks into its result directory
+(`embench/scores/<date>-<time>-<configuration>/`, or `-L`) and the simulator of
+the configuration: with FuseSoC, copied to
+`build/sims/Vibex_simple_system_<configuration>`, or with the fallback script
+where FuseSoC is not installed or its build fails; `-S` takes a simulator
+instead. The results are `speed-<f>MHz.txt` (`benchmark_speed.py`'s output),
+`summary-<f>MHz.txt` (counts and scores to four decimals), `results.csv` and
+`record.txt`, with what Embench's guide asks to be recorded with a result.
+`-R DIR -f MHZ` scores the runs in DIR again at another clock frequency
+without running them. Scores of several configurations can be measured at the
+same time, each with its own `-L` and the same `-K` lock file, so that FuseSoC
+builds one at a time. The header of the script describes every option.
+
+Scores compare only with scores of the same benchmarks and reference (the
+submodule's commit has the scripts and reference data of `embench-2.0rc2`;
+Embench 1.0 has other benchmarks and another reference) and the same compiler
+and options.
+
 ## MLPerf Tiny (anomaly detection, ad01)
 
 `examples/sw/benchmarks/mlperf_tiny` runs the MLPerf Tiny anomaly-detection
