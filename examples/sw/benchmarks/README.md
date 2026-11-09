@@ -148,7 +148,10 @@ fusesoc --cores-root=. run --target=sim --setup --build \
 place of `-Wall` in its sim target, as on this fork's `localBranch`: with
 `-Wall`, Verilator 5 stops on lint warnings. FuseSoC always builds into
 `build/lowrisc_ibex_ibex_simple_system_0`, so copy the simulator elsewhere
-before building another configuration. Where FuseSoC cannot be installed,
+and remove that directory before building another configuration: the
+Makefile that edalize writes there runs Verilator only if Verilator's
+makefile is not there yet, so the new parameters might not reach the model.
+Where FuseSoC cannot be installed,
 `common/fallback/build_simple_system.sh <config> [<output dir>]` builds the
 same simulator directly with Verilator (see the comments in it).
 

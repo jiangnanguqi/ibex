@@ -42,7 +42,8 @@
 #   - The simulator, unless -S gives one: with FuseSoC, as ../README.md
 #     describes (fusesoc ... run --target=sim --setup --build
 #     lowrisc:ibex:ibex_simple_system with util/ibex_config.py CONFIG
-#     fusesoc_opts), copied out of FuseSoC's build directory to
+#     fusesoc_opts), from scratch (FuseSoC's build directory is removed
+#     first; see the note there), copied out of that directory to
 #     build/sims/Vibex_simple_system_<CONFIG>; where FuseSoC is not
 #     installed, or its build fails, with
 #     ../common/fallback/build_simple_system.sh CONFIG, which builds the
@@ -249,6 +250,14 @@ if [ -n "$SIM" ]; then
   HOW="given with -S (its configuration is taken to be $CONFIG, not checked)"
 elif command -v fusesoc > /dev/null; then
   echo "Building the simulator ($CONFIG) with FuseSoC (log: $RUN/build_simulator.log)"
+  # FuseSoC builds every configuration in the same directory, and in the
+  # Makefile that edalize writes there, the rule that runs Verilator has no
+  # prerequisites: it runs only if Verilator's makefile
+  # (Vibex_simple_system.mk) is not there yet. Unless FuseSoC clears the
+  # directory itself (versions differ), a build after one of another
+  # configuration would keep that configuration's model. So the directory
+  # is removed first, and every build starts from scratch.
+  rm -rf "$ROOT/build/lowrisc_ibex_ibex_simple_system_0"
   # shellcheck disable=SC2086  # OPTS are separate options
   if (cd "$ROOT" && fusesoc --cores-root=. run --target=sim --setup --build \
         lowrisc:ibex:ibex_simple_system $OPTS) > "$RUN/build_simulator.log" 2>&1 &&
