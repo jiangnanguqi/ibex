@@ -224,8 +224,9 @@ CC=$(mk_var CC)
 ISA=$(mk_var RV_ISA)
 ABI=$(mk_var RV_ABI)
 VERILATOR=${VERILATOR:-verilator}
-OPTS=$(cd "$ROOT" && python3 util/ibex_config.py "$CONFIG" fusesoc_opts 2> /dev/null)
-[ -n "$OPTS" ] || { echo "util/ibex_config.py does not know the configuration $CONFIG" >&2; exit 2; }
+# util/ibex_config.py, which needs PyYAML, prints its errors on standard error
+OPTS=$(cd "$ROOT" && python3 util/ibex_config.py "$CONFIG" fusesoc_opts)
+[ -n "$OPTS" ] || { echo "util/ibex_config.py gave no options for $CONFIG (not in ibex_configs.yaml, or PyYAML missing: see above)" >&2; exit 2; }
 
 # With -K, the builds below are done holding the lock
 if [ -n "$LOCK" ]; then
