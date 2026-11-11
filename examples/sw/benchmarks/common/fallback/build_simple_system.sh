@@ -15,7 +15,8 @@
 # (-Wno-MULTIDRIVEN in place of -Wall, as in that file). The parameters come
 # from util/ibex_config.py <config> fusesoc_opts, passed as -G (vlogparam) or
 # -D (vlogdefine) according to ibex_simple_system.core, plus RVFI, which
-# ibex_top_tracing's default target defines.
+# ibex_top_tracing's default target defines. One difference from FuseSoC:
+# a one-bit parameter set to 1 is passed as 1'b1 (see below).
 #
 # Usage: build_simple_system.sh [config] [output dir]
 #   config:     an entry of ibex_configs.yaml, default small (e.g. maxperf)
@@ -39,21 +40,37 @@ DV="$ROOT/vendor/lowrisc_ip/dv/verilator"
 
 python3 "$HERE/gen_prim_wrappers.py" "$GENERIC" "$OUT/gen"
 
-# Configuration parameters, mapped as FuseSoC maps them
-read -r -a PARAMS <<< "$(python3 - "$ROOT" "$CONFIG" <<'PY'
-import subprocess, sys, yaml
+# Configuration parameters, mapped as FuseSoC maps them, with one exception:
+# FuseSoC gives a one-bit parameter (declared "parameter bit" in
+# ibex_simple_system.sv) as -G<name>=1, a 32-bit 1 that Verilator truncates
+# to one bit with a warning. lint/verilator_waiver.vlt waives that warning
+# under the rule WIDTH, which newer Verilator versions report as WIDTHTRUNC
+# (maxperf's BranchTargetALU and WritebackStage). Here such a 1 is passed as
+# 1'b1, which has the same value and leaves nothing to truncate, so the
+# build does not depend on how a version applies that waiver. A 0 fits in
+# one bit without a warning and is passed as FuseSoC passes it.
+# util/ibex_config.py reads ibex_configs.yaml from the current directory, so
+# it runs in the repository root, wherever this script is started from; if
+# it fails (unknown configuration, no PyYAML), the script stops here.
+PARAM_LIST="$(python3 - "$ROOT" "$CONFIG" <<'PY'
+import re, subprocess, sys, yaml
 root, config = sys.argv[1], sys.argv[2]
 core = yaml.safe_load(open(root + '/examples/simple_system/ibex_simple_system.core'))
 kinds = {name: spec['paramtype'] for name, spec in core['parameters'].items()}
+with open(root + '/examples/simple_system/rtl/ibex_simple_system.sv') as f:
+    one_bit = set(re.findall(r'^\s*parameter\s+bit\s+(\w+)', f.read(), re.M))
 opts = subprocess.check_output([sys.executable, root + '/util/ibex_config.py', config,
-                                'fusesoc_opts'], text=True).split()
+                                'fusesoc_opts'], text=True, cwd=root).split()
 flags = []
 for opt in opts:
     name, value = opt[2:].split('=', 1)
+    if kinds[name] == 'vlogparam' and name in one_bit and value == '1':
+        value = "1'b1"
     flags.append(('-G' if kinds[name] == 'vlogparam' else '-D') + name + '=' + value)
 print(' '.join(flags + ['-DRVFI']))
 PY
 )"
+read -r -a PARAMS <<< "$PARAM_LIST"
 
 FILES=(
   "$ROOT/examples/simple_system/lint/verilator_waiver.vlt"
@@ -83,15 +100,26 @@ INCLUDES="-I$DV/cpp -I$DV/simutil_verilator/cpp -I$ROOT/dv/verilator/pcount/cpp"
 INCLUDES="$INCLUDES -I$ROOT/vendor/lowrisc_ip/ip/prim/dv/prim_secded -I$ROOT/examples/simple_system"
 
 echo "Building Vibex_simple_system ($CONFIG): ${PARAMS[*]}"
+# No argument may be empty: the verilator front end (a Perl script) hands
+# its arguments to verilator_bin through the shell, where an empty one
+# disappears and the option before it takes the next argument as its value.
+# An empty -LDFLAGS "${LIBELF_LDFLAGS:-}" (libelf installed system-wide) took
+# lint/verilator_waiver.vlt that way, so the waiver file was not read: the
+# model then lacks the public parameters that ibex_simple_system.cc reads
+# (no member ibex_simple_system in Vibex_simple_system), and the one-bit -G
+# parameters above were not waived. LIBELF_CFLAGS and LIBELF_LDFLAGS are
+# therefore appended to the other flags, only when set; Verilator joins
+# repeated -CFLAGS and -LDFLAGS in order, so the flags are the same as
+# before when they are set.
 "$VERILATOR" --cc --exe --build -j "$JOBS" --Mdir "$OUT" -o Vibex_simple_system \
   --top-module ibex_simple_system \
   --trace --trace-fst --trace-structs --trace-params --trace-max-array 1024 \
   -CFLAGS "-std=c++11 -Wall -DVM_TRACE_FMT_FST -DTOPLEVEL_NAME=ibex_simple_system -g" \
-  -LDFLAGS "-pthread -lutil -lelf" \
+  -LDFLAGS "-pthread -lutil -lelf${LIBELF_LDFLAGS:+ $LIBELF_LDFLAGS}" \
   -Wno-MULTIDRIVEN -Wwarn-IMPERFECTSCH --unroll-count 72 \
   "${PARAMS[@]}" \
   -I"$PRIM" -I"$ROOT/rtl" -I"$ROOT/vendor/lowrisc_ip/dv/sv/dv_utils" \
-  -CFLAGS "$INCLUDES ${LIBELF_CFLAGS:-}" -LDFLAGS "${LIBELF_LDFLAGS:-}" \
+  -CFLAGS "$INCLUDES${LIBELF_CFLAGS:+ $LIBELF_CFLAGS}" \
   "${FILES[@]}" "${CPP[@]}" > "$OUT/build.log" 2>&1 \
   || { tail -40 "$OUT/build.log"; exit 1; }
 echo "Built $OUT/Vibex_simple_system (log: $OUT/build.log)"
